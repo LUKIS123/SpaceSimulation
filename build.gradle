@@ -14,7 +14,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-    implementation 'com.typesafe:config:1.4.2'
 }
 
 

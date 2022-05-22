@@ -4,11 +4,11 @@ import app.config.ApplicationProperties;
 public class Application {
 
     public static void main(String[] args) {
+        //reading application configuration from configuration.json
         ApplicationConfigurer appConfig = new ApplicationConfigurer();
         ApplicationProperties appProperties = appConfig.parseConfigurationObject(appConfig.readJSONFile());
-
+        //running with properties
         System.out.println(appProperties.toString());
-
 
         Galaxy galaxy = new Galaxy(1,2);
 
