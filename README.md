@@ -1,2 +1,2 @@
 # SpaceSimulation
- OOP Project
+ OOP Project - a simple Agent-based simulation
