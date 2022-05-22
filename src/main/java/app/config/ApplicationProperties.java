@@ -26,7 +26,7 @@ public class ApplicationProperties {
 
     @Override
     public String toString() {
-        return "ApplicationProperties{" +
+        return "Running the Simulation with following properties {" +
                 "galaxySize=" + galaxySize +
                 ", spawnLifeProbability=" + spawnLifeProbability +
                 ", alienRaceAttackingAlgo='" + alienRaceAttackingAlgo + '\'' +
