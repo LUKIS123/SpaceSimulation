@@ -1,0 +1,7 @@
+{
+  "Simulation": {
+    "galaxySize": 250,
+    "spawnLifeProbability": 0.5,
+    "alienRaceAttackingAlgo": "NeighbourRaceAttackingAlgo"
+  }
+}
