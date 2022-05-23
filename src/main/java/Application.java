@@ -1,5 +1,9 @@
 import app.config.ApplicationConfigurer;
 import app.config.ApplicationProperties;
+import app.save.SaveDataToCSV;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -10,7 +14,24 @@ public class Application {
         //running with properties
         System.out.println(appProperties.toString());
 
-        Galaxy galaxy = new Galaxy(1,2);
+        //SaveDataToCSV TEST====================================================
+        List<String[]> dataLines = new ArrayList<>();
+        SaveDataToCSV dataFile = new SaveDataToCSV("output.csv");
+        //Flushing the data at first
+        dataFile.flushCSVFile();
+        //adding array od data to the list
+        dataLines.add(new String[]
+                {"John", "Doe", "38", "Comment Data"});
+        //saving it
+        dataFile.saveSimulationData(dataLines.get(0));
+        //adding another array od data to the list
+        dataLines.add(new String[]
+                {"Jane", "Doe, Jr.", "19", "She said \"I'm being quoted\""});
+        //saving it
+        dataFile.saveSimulationData(dataLines.get(1));
+        //END OF TEST==========================================================
+
+        Galaxy galaxy = new Galaxy(1, 2);
 
         for (int i = 0; i < 5; i++) {
             System.out.print("\033[H\033[2J");
