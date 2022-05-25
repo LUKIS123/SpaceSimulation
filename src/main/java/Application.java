@@ -30,6 +30,7 @@ public class Application {
         //saving it
         dataFile.saveSimulationData(dataLines.get(1));
         //END OF TEST==========================================================
+        System.out.println("123");
 
         Galaxy galaxy = new Galaxy(1, 2);
 
