@@ -8,6 +8,7 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) {
+        // test
         //reading application configuration from configuration.json
         ApplicationConfigurer appConfig = new ApplicationConfigurer();
         ApplicationProperties appProperties = appConfig.parseConfigurationObject(appConfig.readJSONFile());
