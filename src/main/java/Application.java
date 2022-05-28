@@ -30,6 +30,12 @@ public class Application {
                 {"Jane", "Doe, Jr.", "19", "She said \"I'm being quoted\""});
         //saving it
         dataFile.saveSimulationData(dataLines.get(1));
+        //AlienNameGenerator===================================================
+        System.out.println("\nExample Alien names test\n");
+        for(int i=0; i<4;i++){
+            System.out.println(AlienNameGenerator.generate());
+        }
+        System.out.println("\nEnd of test\n");
         //END OF TEST==========================================================
 
         Galaxy galaxy = new Galaxy(1, 2);
