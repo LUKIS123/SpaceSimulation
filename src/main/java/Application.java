@@ -1,4 +1,4 @@
-import app.config.ApplicationConfigurer;
+import app.config.FromJSONConfigurer;
 import app.config.ApplicationProperties;
 import app.save.SaveDataToCSV;
 
@@ -10,8 +10,8 @@ public class Application {
     public static void main(String[] args) {
         // test
         //reading application configuration from configuration.json
-        ApplicationConfigurer appConfig = new ApplicationConfigurer();
-        ApplicationProperties appProperties = appConfig.parseConfigurationObject(appConfig.readJSONFile());
+        FromJSONConfigurer jsonConfigurer = new FromJSONConfigurer();
+        ApplicationProperties appProperties = jsonConfigurer.parseConfigurationObject(jsonConfigurer.readJSONFile());
         //running with properties
         System.out.println(appProperties.toString());
 
@@ -30,6 +30,12 @@ public class Application {
                 {"Jane", "Doe, Jr.", "19", "She said \"I'm being quoted\""});
         //saving it
         dataFile.saveSimulationData(dataLines.get(1));
+        //AlienNameGenerator===================================================
+        System.out.println("\nExample Alien names test\n");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(AlienNameGenerator.generate());
+        }
+        System.out.println("\nEnd of test\n");
         //END OF TEST==========================================================
 
         Galaxy galaxy = new Galaxy(1, 2);

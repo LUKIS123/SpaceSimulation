@@ -1,7 +1,14 @@
 {
   "Simulation": {
     "galaxySize": 250,
-    "spawnLifeProbability": 0.5,
+    "spawnAlienProbability": 0.5,
+    "spawnSolarSystemProbability": 0.5,
+    "randomAlienAmount": false,
+    "alienAmount": 5,
+    "minStartingMoney": 1000,
+    "maxStartingMoney": 1234,
+    "minSolarSystemResources": 100,
+    "maxSolarSystemResources": 1234,
     "alienRaceAttackingAlgo": "NeighbourRaceAttackingAlgo"
   }
 }
