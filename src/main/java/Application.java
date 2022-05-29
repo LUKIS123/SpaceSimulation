@@ -1,3 +1,4 @@
+import app.config.FromConsoleConfigurer;
 import app.config.FromJSONConfigurer;
 import app.config.ApplicationProperties;
 import app.save.SaveDataToCSV;
@@ -9,11 +10,15 @@ public class Application {
 
     public static void main(String[] args) {
         // test
-        //reading application configuration from configuration.json
+        //reading application arguments from console input
+        FromConsoleConfigurer consoleConfigurer = new FromConsoleConfigurer(args);
+        ApplicationProperties consoleAppProperties = consoleConfigurer.parseConsoleInput();
+        System.out.println(consoleAppProperties.toString()+"\n");
+        //reading application arguments from configuration.json
         FromJSONConfigurer jsonConfigurer = new FromJSONConfigurer();
-        ApplicationProperties appProperties = jsonConfigurer.parseConfigurationObject(jsonConfigurer.readJSONFile());
+        ApplicationProperties jsonAppProperties = jsonConfigurer.parseConfigurationObject(jsonConfigurer.readJSONFile());
         //running with properties
-        System.out.println(appProperties.toString());
+        System.out.println(jsonAppProperties.toString());
 
         //SaveDataToCSV TEST====================================================
         List<String[]> dataLines = new ArrayList<>();
