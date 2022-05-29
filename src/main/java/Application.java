@@ -1,4 +1,5 @@
-import app.config.ApplicationConfigurer;
+import app.config.FromConsoleConfigurer;
+import app.config.FromJSONConfigurer;
 import app.config.ApplicationProperties;
 import app.save.SaveDataToCSV;
 
@@ -8,11 +9,16 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) {
-        //reading application configuration from configuration.json
-        ApplicationConfigurer appConfig = new ApplicationConfigurer();
-        ApplicationProperties appProperties = appConfig.parseConfigurationObject(appConfig.readJSONFile());
+        // test
+        //reading application arguments from console input
+        FromConsoleConfigurer consoleConfigurer = new FromConsoleConfigurer(args);
+        ApplicationProperties consoleAppProperties = consoleConfigurer.parseConsoleInput();
+        System.out.println(consoleAppProperties.toString()+"\n");
+        //reading application arguments from configuration.json
+        FromJSONConfigurer jsonConfigurer = new FromJSONConfigurer();
+        ApplicationProperties jsonAppProperties = jsonConfigurer.parseConfigurationObject(jsonConfigurer.readJSONFile());
         //running with properties
-        System.out.println(appProperties.toString());
+        System.out.println(jsonAppProperties.toString());
 
         //SaveDataToCSV TEST====================================================
         List<String[]> dataLines = new ArrayList<>();
@@ -29,6 +35,12 @@ public class Application {
                 {"Jane", "Doe, Jr.", "19", "She said \"I'm being quoted\""});
         //saving it
         dataFile.saveSimulationData(dataLines.get(1));
+        //AlienNameGenerator===================================================
+        System.out.println("\nExample Alien names test\n");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(AlienNameGenerator.generate());
+        }
+        System.out.println("\nEnd of test\n");
         //END OF TEST==========================================================
         System.out.println("123");
 

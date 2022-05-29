@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 group 'org.example'
@@ -17,6 +19,16 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
+application {
+    mainClass = "Application"
+}
+
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "Application")
+    }
 }

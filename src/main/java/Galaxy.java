@@ -51,11 +51,11 @@ public class Galaxy {
         this.grid = grid;
     }
 
-    public AlienRelatiopships getAlienRelatiopships() {
+    public AlienRelatiopships getAlienRelationships() {
         return alienRelatiopships;
     }
 
-    public void setAlienRelatiopships(AlienRelatiopships alienRelatiopships) {
+    public void setAlienRelationships(AlienRelatiopships alienRelatiopships) {
         this.alienRelatiopships = alienRelatiopships;
     }
 
@@ -94,7 +94,8 @@ public class Galaxy {
     public void makeStep() {
 
     }
-    public void print(){
+
+    public void print() {
 
     }
 }
