@@ -20,11 +20,22 @@ public class AlienRelationships {
     }
 
     public void addRelationship(String name1, String name2, int initialValue) {
+        HashMap<String, AlienRelationship> alienRelations = relations.get(name1);
+        if (alienRelations == null) {
+            relations.put(name1, new HashMap<String, AlienRelationship>());
+        }
+        alienRelations = relations.get(name2);
+        if (alienRelations == null) {
+            relations.put(name2, new HashMap<String, AlienRelationship>());
+        }
         relations.get(name1).put(name2, new AlienRelationship(name1, name2, initialValue));
         relations.get(name2).put(name1, new AlienRelationship(name2, name1, initialValue));
     }
 
     public Boolean relationExists(String name1, String name2) {
-        return relations.get(name1).get(name2) != null;
+        HashMap<String, AlienRelationship> alienRelations = relations.get(name1);
+        if (alienRelations == null)
+            return false;
+        return alienRelations.get(name2) != null;
     }
 }
