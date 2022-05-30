@@ -27,7 +27,7 @@ public class SolarSystem {
         this.resourcesExtracted = resourcesExtracted;
     }
 
-    public boolean isHasOwner() {
+    public boolean hasOwner() {
         return hasOwner;
     }
 
@@ -39,11 +39,18 @@ public class SolarSystem {
         return owner;
     }
 
-    public void setOwnerName(AlienRace ownerName) {
+    public void setOwner(AlienRace owner) {
         this.owner = owner;
     }
 
     public void addResourcesExtracted(int delta) {
         this.resourcesExtracted += delta;
+    }
+
+    public void extractResources(int amount) {
+        if (amount > resourcesAmount)
+            amount = resourcesAmount;
+        resourcesExtracted += amount;
+        resourcesAmount -= amount;
     }
 }

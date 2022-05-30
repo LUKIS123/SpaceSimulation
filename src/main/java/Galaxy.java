@@ -19,7 +19,7 @@ public class Galaxy {
         return alienRaceAttackingAlgo;
     }
 
-    public void setAlienRaceAttacker(AlienRaceAttackingAlgo alienRaceAttackingALgo) {
+    public void setAlienRaceAttacker(AlienRaceAttackingAlgo alienRaceAttackingAlgo) {
         this.alienRaceAttackingAlgo = alienRaceAttackingAlgo;
     }
 
@@ -162,8 +162,37 @@ public class Galaxy {
     }
 
     public void makeStep() {
+        for (ArrayList<GalaxyField> line : grid) {
+            for (GalaxyField field : line) {
+                if (!field.isEmpty()) {
+                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources()/100);
+                }
+            }
+        }
+
+        // temporary code TODO better
         for (AlienRace alienRace : alienRaces) {
-            motherShipMover.randomMove(alienRace.getMotherShip(), this);
+            MotherShip motherShip = alienRace.getMotherShip();
+            motherShipMover.randomMove(motherShip, this);
+            SolarSystem currSolarSystem = grid.get(motherShip.getPositionY()).get(motherShip.getPositionX()).getSolarSystem();
+            if (currSolarSystem == null)
+                continue;
+            if (motherShip.getOwner() == currSolarSystem.getOwner()) {
+                motherShip.addResources(currSolarSystem.getResourcesExtracted());
+                currSolarSystem.setResourcesExtracted(0);
+            } else if (!currSolarSystem.hasOwner()) {
+                if (alienRace.getMoney() >= 1000) {
+                    alienRace.addMoney(-1000);
+                    currSolarSystem.setHasOwner(true);
+                    currSolarSystem.setOwner(alienRace);
+                }
+            } else {
+                if (alienRelationships.getRelations().get(alienRace.getName()).get(currSolarSystem.getOwner().getName()).getRelationMeter() > -100) {
+                    alienRaceTrader.trade(this, motherShip, currSolarSystem);
+                } else {
+                    alienRaceAttackingAlgo.attack(this, motherShip, currSolarSystem);
+                }
+            }
         }
     }
 
