@@ -12,7 +12,17 @@ public class ApplicationProperties {
     private final int maxSolarSystemResources;
     private final String alienRaceAttackingAlgo;
 
-    public ApplicationProperties(int galaxySize, double spawnAlienProbability, double spawnSolarSystemProbability, boolean randomAlienAmount, int alienAmount, int minStartingMoney, int maxStartingMoney, int minSolarSystemResources, int maxSolarSystemResources, String alienRaceAttackingAlgo) {
+    public ApplicationProperties(
+            int galaxySize,
+            double spawnAlienProbability,
+            double spawnSolarSystemProbability,
+            boolean randomAlienAmount,
+            int alienAmount,
+            int minStartingMoney,
+            int maxStartingMoney,
+            int minSolarSystemResources,
+            int maxSolarSystemResources,
+            String alienRaceAttackingAlgo) {
         this.galaxySize = galaxySize;
         this.spawnAlienProbability = spawnAlienProbability;
         this.spawnSolarSystemProbability = spawnSolarSystemProbability;

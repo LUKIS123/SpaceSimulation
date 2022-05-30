@@ -1,3 +1,5 @@
+import scala.annotation.meta.setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,6 +7,7 @@ public class AlienRace {
     static private List<String> usedNames = new ArrayList<String>();
     private String name;
     private int money;
+    private MotherShip motherShip;
 
     public AlienRace(String name, int money) {
         usedNames.add(name);
@@ -26,5 +29,17 @@ public class AlienRace {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public MotherShip getMotherShip() {
+        return motherShip;
+    }
+
+    public void addMoney(int delta) {
+        this.money += delta;
+    }
+
+    public void setMotherShip(MotherShip motherShip) {
+        this.motherShip = motherShip;
     }
 }

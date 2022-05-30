@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class GalaxyField {
     private SolarSystem solarSystem;
     // List of mother ships currently in the galaxy field
-    private List<MotherShip> motherShips;
+    private List<MotherShip> motherShips = new ArrayList<MotherShip>();
 
     public SolarSystem getSolarSystem() {
         return solarSystem;
@@ -24,5 +24,9 @@ public class GalaxyField {
 
     public GalaxyField(SolarSystem solarSystem) {
         this.solarSystem = solarSystem;
+    }
+
+    public Boolean isEmpty() {
+        return solarSystem == null;
     }
 }

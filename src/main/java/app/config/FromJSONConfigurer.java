@@ -36,6 +36,17 @@ public class FromJSONConfigurer {
         Long maxSolarSystemResources = (Long) Simulation.get("maxSolarSystemResources");
         String alienRaceAttackingAlgo = (String) Simulation.get("alienRaceAttackingAlgo");
 
-        return new ApplicationProperties(galaxySize.intValue(), spawnAlienProbability, spawnSolarSystemProbability, randomAlienAmount, alienAmount.intValue(), minStartingMoney.intValue(), maxStartingMoney.intValue(), minSolarSystemResources.intValue(), maxSolarSystemResources.intValue(), alienRaceAttackingAlgo);
+        return new ApplicationProperties(
+                galaxySize.intValue(),
+                spawnAlienProbability,
+                spawnSolarSystemProbability,
+                randomAlienAmount,
+                alienAmount.intValue(),
+                minStartingMoney.intValue(),
+                maxStartingMoney.intValue(),
+                minSolarSystemResources.intValue(),
+                maxSolarSystemResources.intValue(),
+                alienRaceAttackingAlgo
+        );
     }
 }

@@ -34,6 +34,6 @@ public class AlienRelationship {
     }
 
     public void changeRelationship(int delta) {
-
+        this.relationMeter += delta;
     }
 }

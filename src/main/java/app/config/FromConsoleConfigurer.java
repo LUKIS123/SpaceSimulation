@@ -33,6 +33,17 @@ public class FromConsoleConfigurer {
 
     public ApplicationProperties parseConsoleInput(){
 
-        return new ApplicationProperties(getIntValue("galaxySize"), getDoubleValue("spawnAlienProbability"), getDoubleValue("spawnSolarSystemProbability"), getBooleanValue("randomAlienAmount"), getIntValue("alienAmount"), getIntValue("minStartingMoney"), getIntValue("maxStartingMoney"), getIntValue("minSolarSystemResources"), getIntValue("maxSolarSystemResources"), getStringValue("alienRaceAttackingAlgo"));
+        return new ApplicationProperties(
+                getIntValue("galaxySize"),
+                getDoubleValue("spawnAlienProbability"),
+                getDoubleValue("spawnSolarSystemProbability"),
+                getBooleanValue("randomAlienAmount"),
+                getIntValue("alienAmount"),
+                getIntValue("minStartingMoney"),
+                getIntValue("maxStartingMoney"),
+                getIntValue("minSolarSystemResources"),
+                getIntValue("maxSolarSystemResources"),
+                getStringValue("alienRaceAttackingAlgo")
+        );
     }
 }
