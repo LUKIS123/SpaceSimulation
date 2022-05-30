@@ -64,7 +64,7 @@ public class Galaxy {
         // init grid
         for (int i = 0; i < this.sizeY; i++) {
             ArrayList<GalaxyField> line = new ArrayList<GalaxyField>();
-            for (int j = 0; j < this.sizeY; j++) {
+            for (int j = 0; j < this.sizeX; j++) {
                 line.add(new GalaxyField(null));
             }
             grid.add(line);
