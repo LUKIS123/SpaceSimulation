@@ -2,14 +2,17 @@ public class MotherShip {
     private int positionX;
     private int positionY;
     private int recourses;
+    private AlienRace owner;
 
     public void visitSolarSystem(SolarSystem solarSystem) {
     }
 
-    public MotherShip(int positionX, int positionY, int recourses) {
+    public MotherShip(int positionX, int positionY, int recourses, AlienRace owner) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.recourses = recourses;
+        this.owner = owner;
+
     }
 
     public int getPositionX() {
@@ -34,5 +37,13 @@ public class MotherShip {
 
     public void setRecourses(int recourses) {
         this.recourses = recourses;
+    }
+
+    public AlienRace getOwner() {
+        return owner;
+    }
+
+    public void setOwner(AlienRace owner) {
+        this.owner = owner;
     }
 }

@@ -42,4 +42,8 @@ public class SolarSystem {
     public void setOwnerName(AlienRace ownerName) {
         this.owner = owner;
     }
+
+    public void addResourcesExtracted(int delta) {
+        this.resourcesExtracted += delta;
+    }
 }

@@ -11,29 +11,32 @@ public class AlienNameGenerator {
         StringBuilder name = new StringBuilder();
         int range = 2 + random.nextInt(5);
         int i = 0;
-        //loop iterations range from 2 to 6
+        // loop iterations range from 2 to 6
         while (i < range) {
-            //syllables are chosen from the 1st to 30th index of the array
+            // syllables are chosen from the 1st to 30th index of the array
             int randomIndex = random.nextInt(40);
             if (i == 0) {
                 name = new StringBuilder(syllables[randomIndex]);
             } else {
-                //choosing regex between syllables
-                String regex = "";
-                int randomCase = random.nextInt(4);
+                // choosing separator between syllables
+                String separator = "";
+                int randomCase = random.nextInt(5);
                 switch (randomCase) {
                     case 1:
-                        regex = " ";
+                        separator = " ";
                         break;
                     case 2:
-                        regex = "-";
+                        separator = "-";
                         break;
                     case 3:
-                        regex = "'";
+                        separator = "'";
                         break;
+                    case 4:
                     default:
+                        separator = "";
+                        break;
                 }
-                name.append(regex).append(syllables[randomIndex]);
+                name.append(separator).append(syllables[randomIndex]);
             }
             i++;
         }
