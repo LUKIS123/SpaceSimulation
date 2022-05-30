@@ -63,7 +63,11 @@ public class Galaxy {
     private void initGrid() {
         // init grid
         for (int i = 0; i < this.sizeY; i++) {
-            grid.add(new ArrayList<GalaxyField>(this.sizeX));
+            ArrayList<GalaxyField> line = new ArrayList<GalaxyField>();
+            for (int j = 0; j < this.sizeX; j++) {
+                line.add(new GalaxyField(null));
+            }
+            grid.add(line);
         }
 
         // init grid's solar systems
@@ -187,7 +191,13 @@ public class Galaxy {
                     currSolarSystem.setOwner(alienRace);
                 }
             } else {
-                if (alienRelationships.getRelations().get(alienRace.getName()).get(currSolarSystem.getOwner().getName()).getRelationMeter() > -100) {
+                String name1 = alienRace.getName();
+                String name2 = currSolarSystem.getOwner().getName();
+                boolean exists = alienRelationships.relationExists(name1, name2);
+                if (!exists) {
+                    alienRelationships.addRelationship(name1, name2, 0);
+                }
+                if (alienRelationships.getRelations().get(name1).get(name2).getRelationMeter() > -100) {
                     alienRaceTrader.trade(this, motherShip, currSolarSystem);
                 } else {
                     alienRaceAttackingAlgo.attack(this, motherShip, currSolarSystem);
