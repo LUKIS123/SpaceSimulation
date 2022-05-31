@@ -1,7 +1,6 @@
-import app.config.FromConsoleConfigurer;
+import app.config.ArgumentHandler;
 import app.config.ApplicationProperties;
-import app.config.FromJSONConfigurer;
-import app.save.SaveDataToCSV;
+import app.save.DataToCsvWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,20 +8,14 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) {
-        // test
-        // reading application arguments from console input
-        FromConsoleConfigurer consoleConfigurer = new FromConsoleConfigurer(args);
-        ApplicationProperties consoleAppProperties = consoleConfigurer.parseConsoleInput();
-        System.out.println(consoleAppProperties.toString()+"\n");
-        // reading application arguments from configuration.json
-        FromJSONConfigurer jsonConfigurer = new FromJSONConfigurer();
-        ApplicationProperties jsonAppProperties = jsonConfigurer.parseConfigurationObject(jsonConfigurer.readJSONFile());
-        // running with properties
-        System.out.println(jsonAppProperties.toString());
+
+        ArgumentHandler argumentHandler = new ArgumentHandler(args);
+        ApplicationProperties applicationProperties = argumentHandler.getProperties();
+        System.out.println(applicationProperties);
 
         // SaveDataToCSV TEST====================================================
         List<String[]> dataLines = new ArrayList<>();
-        SaveDataToCSV dataFile = new SaveDataToCSV("output.csv");
+        DataToCsvWriter dataFile = new DataToCsvWriter("output.csv");
         // Flushing the data at first
         dataFile.flushCSVFile();
         // adding array od data to the list
@@ -43,7 +36,7 @@ public class Application {
         System.out.println("\nEnd of test\n");
         // END OF TEST==========================================================
 
-        Galaxy galaxy = new Galaxy(consoleAppProperties);
+        Galaxy galaxy = new Galaxy(applicationProperties);
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Generation " + (i + 1) + ":");

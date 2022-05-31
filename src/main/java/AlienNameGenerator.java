@@ -5,7 +5,7 @@ public class AlienNameGenerator {
     private static final String[] syllables =
             {"Cla", "At", "Oisc", "At", "Iy", "Fri", "Un", "Is", "Groi", "Go", "Grai", "Ig", "Ih", "Klo", "Ul", "Ru",
                     "Sce", "Tee", "Aaf", "Xu", "Ob", "Ib", "Va", "As", "Le", "Gli", "Aiw", "Hoa", "Ox", "Mu", "Keu",
-                    "Flo", "Si", "Zoe", "Ic", "Frou", "Dreo", "Za", "Ost", "Ut"};
+                    "Flo", "Si", "Zoe", "Ic", "Frou", "Dreo", "Za", "Ost", "Ut", "Nib", "Ba"};
 
     public static String generate() {
         StringBuilder name = new StringBuilder();
@@ -14,12 +14,12 @@ public class AlienNameGenerator {
         // loop iterations range from 2 to 6
         while (i < range) {
             // syllables are chosen from the 1st to 30th index of the array
-            int randomIndex = random.nextInt(40);
+            int randomIndex = random.nextInt(42);
             if (i == 0) {
                 name = new StringBuilder(syllables[randomIndex]);
             } else {
                 // choosing separator between syllables
-                String separator = "";
+                String separator;
                 int randomCase = random.nextInt(5);
                 switch (randomCase) {
                     case 1:
@@ -36,7 +36,11 @@ public class AlienNameGenerator {
                         separator = "";
                         break;
                 }
-                name.append(separator).append(syllables[randomIndex]);
+                if (separator.equals("")) {
+                    name.append(separator).append(syllables[randomIndex].toLowerCase());
+                } else {
+                    name.append(separator).append(syllables[randomIndex]);
+                }
             }
             i++;
         }
