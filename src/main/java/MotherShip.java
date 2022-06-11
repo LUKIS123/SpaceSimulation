@@ -54,4 +54,9 @@ public class MotherShip {
     public void destroyAndRespawn() {
         this.resources = 0;
     }
+
+    @Override
+    public String toString() {
+        return owner.toString();
+    }
 }

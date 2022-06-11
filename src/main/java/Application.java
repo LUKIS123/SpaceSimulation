@@ -40,11 +40,12 @@ public class Application {
             galaxy.makeStep();
             galaxy.print();
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        galaxy.getGrid().forEach(galaxyFields -> System.out.println(galaxyFields));
     }
 }

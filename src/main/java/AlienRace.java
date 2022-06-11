@@ -42,4 +42,12 @@ public class AlienRace {
     public void setMotherShip(MotherShip motherShip) {
         this.motherShip = motherShip;
     }
+
+    @Override
+    public String toString() {
+        return "AlienRace{" +
+                "name='" + name + '\'' +
+                ", money=" + money +
+                '}';
+    }
 }

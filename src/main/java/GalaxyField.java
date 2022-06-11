@@ -29,4 +29,14 @@ public class GalaxyField {
     public Boolean isEmpty() {
         return solarSystem == null;
     }
+
+    @Override
+    public String toString() {
+        String[] output = {""};
+        motherShips.forEach(motherShip -> {
+            if(motherShip.getOwner()!=null)
+            output[0] += motherShip.toString();
+        });
+        return output[0];
+    }
 }
