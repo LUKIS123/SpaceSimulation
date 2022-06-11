@@ -39,6 +39,7 @@ public class Application {
 
             galaxy.makeStep();
             galaxy.print();
+            galaxy.getGrid().forEach(galaxyFields -> System.out.println(galaxyFields));
             try {
                 Thread.sleep(10);
 
@@ -46,6 +47,5 @@ public class Application {
                 e.printStackTrace();
             }
         }
-        galaxy.getGrid().forEach(galaxyFields -> System.out.println(galaxyFields));
     }
 }
