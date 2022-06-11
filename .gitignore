@@ -1,4 +1,4 @@
-!build/libs
 build/*
+!build/libs
 .gradle
 .idea
