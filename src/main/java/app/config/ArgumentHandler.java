@@ -6,16 +6,14 @@ public class ArgumentHandler {
     private final Map<String, String> consoleArgsMap;
     private final Map<String, String> jsonArgsMap;
 
-    public ArgumentHandler(String[] consoleInput) {
+    public ArgumentHandler(IConsoleConfiguration consoleConfig, IJsonConfiguration jsonConfig) {
 
-        ConsoleConfiguration consoleConfiguration = new ConsoleConfiguration(consoleInput);
-        this.consoleArgsMap = consoleConfiguration.getConfig();
+        this.consoleArgsMap = consoleConfig.getConfig();
 
-        JsonConfiguration jsonConfiguration = new JsonConfiguration();
-        this.jsonArgsMap = jsonConfiguration.getConfig();
+        this.jsonArgsMap = jsonConfig.getConfig();
     }
 
-    public int getIntValue(String key) {
+    private int getIntValue(String key) {
         try {
             if (consoleArgsMap.get(key) == null) {
                 return Integer.parseInt(jsonArgsMap.get(key));
@@ -28,7 +26,7 @@ public class ArgumentHandler {
         }
     }
 
-    public double getDoubleValue(String key) {
+    private double getDoubleValue(String key) {
         try {
             if (consoleArgsMap.get(key) == null) {
                 return Double.parseDouble(jsonArgsMap.get(key));
@@ -41,7 +39,7 @@ public class ArgumentHandler {
         }
     }
 
-    public boolean getBooleanValue(String key) {
+    private boolean getBooleanValue(String key) {
         try {
             if (consoleArgsMap.get(key) == null) {
                 return Boolean.parseBoolean(jsonArgsMap.get(key));
@@ -54,7 +52,7 @@ public class ArgumentHandler {
         }
     }
 
-    public String getStringValue(String key) {
+    private String getStringValue(String key) {
         try {
             if (consoleArgsMap.get(key) == null) {
                 return jsonArgsMap.get(key);

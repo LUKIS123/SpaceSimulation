@@ -9,20 +9,22 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JsonConfiguration {
+public class JsonConfiguration implements IJsonConfiguration {
 
     private JSONObject jsonObject;
+    private final String file;
     private final Map<String, String> argsMap = new HashMap<>();
 
-    public JsonConfiguration() {
+    public JsonConfiguration(String filePath) {
+        this.file = filePath;
         readFile();
         parseJSONObject();
     }
 
-    public void readFile() {
+    private void readFile() {
         JSONParser jsonParser = new JSONParser();
         Object object;
-        try (FileReader reader = new FileReader("configuration.json")) {
+        try (FileReader reader = new FileReader(file)) {
             object = jsonParser.parse(reader);
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);

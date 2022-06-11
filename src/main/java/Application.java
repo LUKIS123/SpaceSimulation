@@ -1,5 +1,7 @@
 import app.config.ArgumentHandler;
 import app.config.ApplicationProperties;
+import app.config.ConsoleConfiguration;
+import app.config.JsonConfiguration;
 import app.save.DataToCsvWriter;
 
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-        ArgumentHandler argumentHandler = new ArgumentHandler(args);
+        ArgumentHandler argumentHandler = new ArgumentHandler(new ConsoleConfiguration(args), new JsonConfiguration("configuration.json"));
         ApplicationProperties applicationProperties = argumentHandler.getProperties();
         System.out.println(applicationProperties);
 
@@ -28,12 +30,6 @@ public class Application {
                 {"Jane", "Doe, Jr.", "19", "She said \"I'm being quoted\""});
         // saving it
         dataFile.saveSimulationData(dataLines.get(1));
-        // AlienNameGenerator===================================================
-        System.out.println("\nExample Alien names test\n");
-        for (int i = 0; i < 5; i++) {
-            System.out.println(AlienNameGenerator.generate());
-        }
-        System.out.println("\nEnd of test\n");
         // END OF TEST==========================================================
 
         Galaxy galaxy = new Galaxy(applicationProperties);
