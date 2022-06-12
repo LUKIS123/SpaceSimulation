@@ -9,6 +9,9 @@ public class SolarSystem {
         this.resourcesExtracted = resourcesExtracted;
         this.hasOwner = hasOwner;
         this.owner = owner;
+        if (owner != null) {
+            owner.addSolarSystem(this);
+        }
     }
 
     public int getResourcesAmount() {
@@ -40,6 +43,12 @@ public class SolarSystem {
     }
 
     public void setOwner(AlienRace owner) {
+        if (this.owner != null) {
+            this.owner.removeSolarSystem(this);
+        }
+        if (owner != null) {
+            owner.addSolarSystem(this);
+        }
         this.owner = owner;
     }
 

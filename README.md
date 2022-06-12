@@ -3,7 +3,7 @@
 
 The program can be run either by ```gadle``` task ```run``` with following set of arguments, for example:
 ```java
-run --args="--galaxySize 200 --spawnAlienProbability 0.5 --spawnSolarSystemProbability 0.5 --randomAlienAmount false --alienAmount 5 --minStartingMoney 1000 --maxStartingMoney 1234 --minSolarSystemResources 100 --maxSolarSystemResources 1234 --alienRaceAttackingAlgo NeighbourRaceAttackingAlgo"
+run --args="--galaxySize 10 --spawnAlienProbability 0.5 --spawnSolarSystemProbability 0.5 --randomAlienAmount false --alienAmount 5 --minStartingMoney 1000 --maxStartingMoney 1234 --minSolarSystemResources 100 --maxSolarSystemResources 1234 --alienRaceAttackingAlgo NeighbourRaceAttackingAlgo"
 ```
 Or you can run the ```SpaceSimulation-1.0-SNAPSHOT-all.jar``` file in the direcory ```\SpaceSimulation\build\libs``` with following set of arguments, for example:
 ```java

@@ -4,12 +4,11 @@ public class RandomAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
 
     private static final Random random = new Random();
     @Override
-    public void attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem) {
-        if (random.nextInt(2) == 0) {
-            attackedSolarSystem.addResourcesExtracted(attackingShip.getResources());
-            attackingShip.destroyAndRespawn();
+    public boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem) {
+        if (random.nextInt(2) == 1) {
+            return true;
         } else {
-            attackedSolarSystem.setOwner(attackingShip.getOwner());
+            return false;
         }
     }
 }

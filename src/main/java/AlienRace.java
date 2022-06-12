@@ -5,6 +5,7 @@ import java.util.List;
 
 public class AlienRace {
     static private List<String> usedNames = new ArrayList<String>();
+    private List<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private String name;
     private int money;
     private MotherShip motherShip;
@@ -13,6 +14,18 @@ public class AlienRace {
         usedNames.add(name);
         this.name = name;
         this.money = money;
+    }
+
+    public List<SolarSystem> getSolarSystems() {
+        return this.solarSystems;
+    }
+
+    public void addSolarSystem(SolarSystem solarSystem) {
+        this.solarSystems.add(solarSystem);
+    }
+
+    public void removeSolarSystem(SolarSystem solarSystem) {
+        this.solarSystems.remove(solarSystem);
     }
 
     public String getName() {

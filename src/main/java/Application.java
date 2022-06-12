@@ -15,6 +15,7 @@ public class Application {
         ApplicationProperties applicationProperties = argumentHandler.getProperties();
         System.out.println(applicationProperties);
 
+        /*
         // SaveDataToCSV TEST====================================================
         List<String[]> dataLines = new ArrayList<>();
         DataToCsvWriter dataFile = new DataToCsvWriter("output.csv");
@@ -31,21 +32,20 @@ public class Application {
         // saving it
         dataFile.saveSimulationData(dataLines.get(1));
         // END OF TEST==========================================================
+         */
 
         Galaxy galaxy = new Galaxy(applicationProperties);
 
-        for (int i = 0; i < 5; i++) {
+
+        System.out.println("\n------------- Starting state: ------------");
+        GalaxyPrinter.printAliens(galaxy);
+        for (int i = 0; i < 30; i++) {
             System.out.println("Generation " + (i + 1) + ":");
 
             galaxy.makeStep();
             galaxy.print();
-            galaxy.getGrid().forEach(galaxyFields -> System.out.println(galaxyFields));
-            try {
-                Thread.sleep(10);
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
+        System.out.println("\n------------- Ending state: ------------");
+        GalaxyPrinter.printAliens(galaxy);
     }
 }

@@ -1,3 +1,3 @@
 public interface AlienRaceAttackingAlgo {
-    public void attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem);
+    public boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem);
 }

@@ -176,16 +176,24 @@ public class Galaxy {
 
         // temporary code TODO better
         for (AlienRace alienRace : alienRaces) {
+            System.out.println("\t" + alienRace.getName() + ": ");
             MotherShip motherShip = alienRace.getMotherShip();
             motherShipMover.randomMove(motherShip, this);
+            System.out.println("\t\tShip moved to x=" + motherShip.getPositionX() + " y=" + motherShip.getPositionY());
             SolarSystem currSolarSystem = grid.get(motherShip.getPositionY()).get(motherShip.getPositionX()).getSolarSystem();
-            if (currSolarSystem == null)
+            if (currSolarSystem == null) {
+                System.out.println("\t\tShip is on an empty square");
                 continue;
+            }
             if (motherShip.getOwner() == currSolarSystem.getOwner()) {
-                motherShip.addResources(currSolarSystem.getResourcesExtracted());
+                int extracted = currSolarSystem.getResourcesExtracted();
+                System.out.println("\t\tShip landed on its own planet and extracted " + extracted + " resources");
+                motherShip.addResources(extracted);
                 currSolarSystem.setResourcesExtracted(0);
             } else if (!currSolarSystem.hasOwner()) {
+                System.out.println("\t\tShip landed on empty planet");
                 if (alienRace.getMoney() >= 1000) {
+                    System.out.println("\t\tEmpty planet became colonized");
                     alienRace.addMoney(-1000);
                     currSolarSystem.setHasOwner(true);
                     currSolarSystem.setOwner(alienRace);
@@ -193,13 +201,17 @@ public class Galaxy {
             } else {
                 String name1 = alienRace.getName();
                 String name2 = currSolarSystem.getOwner().getName();
+                System.out.println("\t\tShip landed on a planet colonized by " + name2);
                 boolean exists = alienRelationships.relationExists(name1, name2);
                 if (!exists) {
+                    System.out.println("\t\tIt's first time they meet");
                     alienRelationships.addRelationship(name1, name2, 0);
                 }
                 if (alienRelationships.getRelations().get(name1).get(name2).getRelationMeter() > -100) {
+                    System.out.println("\t\tThey traded");
                     alienRaceTrader.trade(this, motherShip, currSolarSystem);
                 } else {
+                    System.out.println("\t\tThey fought with each other");
                     alienRaceAttackingAlgo.attack(this, motherShip, currSolarSystem);
                 }
             }

@@ -1,11 +1,10 @@
 public class MoneyAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
     @Override
-    public void attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem) {
+    public boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem) {
         if (attackingShip.getOwner().getMoney() > attackedSolarSystem.getOwner().getMoney()) {
-            attackedSolarSystem.addResourcesExtracted(attackingShip.getResources());
-            attackingShip.destroyAndRespawn();
+            return true;
         } else {
-            attackedSolarSystem.setOwner(attackingShip.getOwner());
+            return false;
         }
     }
 }
