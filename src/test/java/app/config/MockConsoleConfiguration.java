@@ -12,6 +12,7 @@ public class MockConsoleConfiguration implements IConsoleConfiguration {
         mockArgs.put("spawnAlienProbability", "0.111");
         mockArgs.put("spawnSolarSystemProbability", "0.222");
         mockArgs.put("randomAlienAmount", "false");
+        mockArgs.put("generationCount", "87");
 
         return mockArgs;
     }

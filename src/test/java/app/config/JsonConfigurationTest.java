@@ -25,6 +25,6 @@ class JsonConfigurationTest {
         assertEquals("99", testArgsMap.get("minSolarSystemResources"));
         assertEquals("5556", testArgsMap.get("maxSolarSystemResources"));
         assertEquals("NeighbourRaceAttackingAlgo", testArgsMap.get("alienRaceAttackingAlgo"));
-
+        assertEquals("99", testArgsMap.get("generationCount"));
     }
 }

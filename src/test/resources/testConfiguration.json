@@ -9,6 +9,7 @@
     "maxStartingMoney": 4444,
     "minSolarSystemResources": 99,
     "maxSolarSystemResources": 5556,
-    "alienRaceAttackingAlgo": "NeighbourRaceAttackingAlgo"
+    "alienRaceAttackingAlgo": "NeighbourRaceAttackingAlgo",
+    "generationCount": 99
   }
 }

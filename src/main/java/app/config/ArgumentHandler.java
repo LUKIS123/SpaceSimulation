@@ -69,6 +69,7 @@ public class ArgumentHandler {
         return new ApplicationProperties(getIntValue("galaxySize"), getDoubleValue("spawnAlienProbability"),
                 getDoubleValue("spawnSolarSystemProbability"), getBooleanValue("randomAlienAmount"),
                 getIntValue("alienAmount"), getIntValue("minStartingMoney"), getIntValue("maxStartingMoney"),
-                getIntValue("minSolarSystemResources"), getIntValue("maxSolarSystemResources"), getStringValue("alienRaceAttackingAlgo"));
+                getIntValue("minSolarSystemResources"), getIntValue("maxSolarSystemResources"),
+                getStringValue("alienRaceAttackingAlgo"), getIntValue("generationCount"));
     }
 }

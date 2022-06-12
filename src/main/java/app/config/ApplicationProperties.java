@@ -11,6 +11,7 @@ public class ApplicationProperties {
     private final int minSolarSystemResources;
     private final int maxSolarSystemResources;
     private final String alienRaceAttackingAlgo;
+    private final int generationCount;
 
     public ApplicationProperties(
             int galaxySize,
@@ -22,7 +23,7 @@ public class ApplicationProperties {
             int maxStartingMoney,
             int minSolarSystemResources,
             int maxSolarSystemResources,
-            String alienRaceAttackingAlgo) {
+            String alienRaceAttackingAlgo, int generationCount) {
         this.galaxySize = galaxySize;
         this.spawnAlienProbability = spawnAlienProbability;
         this.spawnSolarSystemProbability = spawnSolarSystemProbability;
@@ -33,6 +34,7 @@ public class ApplicationProperties {
         this.minSolarSystemResources = minSolarSystemResources;
         this.maxSolarSystemResources = maxSolarSystemResources;
         this.alienRaceAttackingAlgo = alienRaceAttackingAlgo;
+        this.generationCount = generationCount;
     }
 
     public double getSpawnSolarSystemProbability() {
@@ -75,6 +77,10 @@ public class ApplicationProperties {
         return alienRaceAttackingAlgo;
     }
 
+    public int getGenerationCount() {
+        return generationCount;
+    }
+
     @Override
     public String toString() {
         return "ApplicationProperties{" +
@@ -88,6 +94,7 @@ public class ApplicationProperties {
                 ", minSolarSystemResources=" + minSolarSystemResources +
                 ", maxSolarSystemResources=" + maxSolarSystemResources +
                 ", alienRaceAttackingAlgo='" + alienRaceAttackingAlgo + '\'' +
+                ", generationCount=" + generationCount +
                 '}';
     }
 }
