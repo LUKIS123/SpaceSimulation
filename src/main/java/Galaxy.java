@@ -11,17 +11,10 @@ public class Galaxy {
     private Map<String, MotherShip> alienMotherShips = new HashMap<String, MotherShip>();
     private MotherShipMover motherShipMover = new MotherShipMover();
     private AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
+    private AlienAttacker alienAttacker;
     private AlienRaceAttackingAlgo alienRaceAttackingAlgo;
     private ApplicationProperties config;
     private static final Random random = new Random();
-
-    public AlienRaceAttackingAlgo getAlienRaceAttackingAlgo() {
-        return alienRaceAttackingAlgo;
-    }
-
-    public void setAlienRaceAttacker(AlienRaceAttackingAlgo alienRaceAttackingAlgo) {
-        this.alienRaceAttackingAlgo = alienRaceAttackingAlgo;
-    }
 
     public Galaxy(ApplicationProperties config) {
         this.config = config;
@@ -34,20 +27,22 @@ public class Galaxy {
     }
 
     private void initAlienRaceAttackingAlgo() {
+        AlienRaceAttackingAlgo alienRaceAttackingAlgo;
         switch (config.getAlienRaceAttackingAlgo()) {
             case "RandomAlienRaceAttackingAlgo":
-                this.alienRaceAttackingAlgo = new RandomAlienRaceAttackingAlgo();
+                alienRaceAttackingAlgo = new RandomAlienRaceAttackingAlgo();
                 break;
             case "NeighbourAlienRaceAttackingAlgo":
-                this.alienRaceAttackingAlgo = new NeighbourAlienRaceAttackingAlgo();
+                alienRaceAttackingAlgo = new NeighbourAlienRaceAttackingAlgo();
                 break;
             case "MoneyAlienRaceAttackingAlgo":
-                this.alienRaceAttackingAlgo = new MoneyAlienRaceAttackingAlgo();
+                alienRaceAttackingAlgo = new MoneyAlienRaceAttackingAlgo();
                 break;
             default:
-                this.alienRaceAttackingAlgo = new RandomAlienRaceAttackingAlgo();
+                alienRaceAttackingAlgo = new RandomAlienRaceAttackingAlgo();
                 break;
         }
+        this.alienAttacker = new AlienAttacker(alienRaceAttackingAlgo);
     }
 
     private void initAliens() {
@@ -212,7 +207,7 @@ public class Galaxy {
                     alienRaceTrader.trade(this, motherShip, currSolarSystem);
                 } else {
                     System.out.println("\t\tThey fought with each other");
-                    alienRaceAttackingAlgo.attack(this, motherShip, currSolarSystem);
+                    alienAttacker.attack(this, motherShip, currSolarSystem);
                 }
             }
         }

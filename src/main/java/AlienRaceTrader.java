@@ -5,7 +5,7 @@ public class AlienRaceTrader {
     private static final Random random = new Random();
 
     public void trade(Galaxy galaxy, MotherShip alienOneShip, SolarSystem alienTwoSolarSystem) {
-        int randomDelta = -10 + random.nextInt(20);
+        int randomDelta = -100 + random.nextInt(200);
         String name1 = alienOneShip.getOwner().getName();
         String name2 = alienTwoSolarSystem.getOwner().getName();
 
@@ -16,6 +16,8 @@ public class AlienRaceTrader {
         int money = resources * (rel + 120)/10;
 
         System.out.println("\t\tThey traded " + resources + " resources for " + money + " money");
+        System.out.println("\t\tRelationship changed to: " + rel);
+
         alienTwoSolarSystem.addResourcesExtracted(resources);
         alienOneShip.getOwner().addMoney(money);
         alienOneShip.setResources(0);

@@ -36,15 +36,21 @@ public class Application {
 
         Galaxy galaxy = new Galaxy(applicationProperties);
 
-
         System.out.println("\n------------- Starting state: ------------");
         GalaxyPrinter.printAliens(galaxy);
-        for (int i = 0; i < 30; i++) {
+
+        for (int i = 0; i < applicationProperties.getGenerationCount(); i++) {
             System.out.println("Generation " + (i + 1) + ":");
 
             galaxy.makeStep();
             galaxy.print();
+
+            if (i % 10 == 0) {
+                System.out.println("------------ STATE AFTER " + (i + 1) + " GENERATIONS: ------------");
+                GalaxyPrinter.printAliens(galaxy);
+            }
         }
+
         System.out.println("\n------------- Ending state: ------------");
         GalaxyPrinter.printAliens(galaxy);
     }
