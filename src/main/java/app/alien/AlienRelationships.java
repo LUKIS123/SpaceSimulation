@@ -1,8 +1,10 @@
+package app.alien;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class AlienRelationships {
-    private Map<String, Map<String, AlienRelationship>> relations = new HashMap<String, Map<String, AlienRelationship>>();
+    private Map<String, Map<String, AlienRelationship>> relations = new HashMap<>();
 
     public AlienRelationships() {
     }

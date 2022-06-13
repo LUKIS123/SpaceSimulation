@@ -1,3 +1,10 @@
+package app.attack;
+
+import app.attack.algo.AlienRaceAttackingAlgo;
+import app.environment.Galaxy;
+import app.environment.MotherShip;
+import app.environment.SolarSystem;
+
 public class AlienAttacker {
     private AlienRaceAttackingAlgo attackingAlgo;
 

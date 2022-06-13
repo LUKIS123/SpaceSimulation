@@ -1,11 +1,14 @@
-import scala.annotation.meta.setter;
+package app.alien;
+
+import app.environment.MotherShip;
+import app.environment.SolarSystem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AlienRace {
-    static private List<String> usedNames = new ArrayList<String>();
-    private List<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
+    static private List<String> usedNames = new ArrayList<>();
+    private List<SolarSystem> solarSystems = new ArrayList<>();
     private String name;
     private int money;
     private MotherShip motherShip;
@@ -58,7 +61,7 @@ public class AlienRace {
 
     @Override
     public String toString() {
-        return "AlienRace{" +
+        return "app.alien.AlienRace{" +
                 "name='" + name + '\'' +
                 ", money=" + money +
                 '}';

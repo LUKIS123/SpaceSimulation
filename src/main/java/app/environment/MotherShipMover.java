@@ -1,3 +1,5 @@
+package app.environment;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -43,7 +45,7 @@ public class MotherShipMover {
     }
 
     void randomMove(MotherShip ship, Galaxy galaxy) {
-        List<Move> moves = new ArrayList<Move>();
+        List<Move> moves = new ArrayList<>();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 if (ship.getPositionX() + i == -1 || ship.getPositionX() + i >= galaxy.getSizeX())

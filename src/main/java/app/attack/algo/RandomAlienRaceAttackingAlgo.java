@@ -1,3 +1,9 @@
+package app.attack.algo;
+
+import app.environment.Galaxy;
+import app.environment.MotherShip;
+import app.environment.SolarSystem;
+
 import java.util.Random;
 
 public class RandomAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {

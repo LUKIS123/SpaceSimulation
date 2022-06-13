@@ -20,7 +20,7 @@ dependencies {
 }
 
 application {
-    mainClass = "Application"
+    mainClass = "app.Application"
 }
 
 test {
@@ -29,6 +29,6 @@ test {
 
 jar {
     manifest {
-        attributes("Main-Class": "Application")
+        attributes("Main-Class": "app.Application")
     }
 }

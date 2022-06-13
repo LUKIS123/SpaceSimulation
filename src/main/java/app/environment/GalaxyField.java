@@ -1,10 +1,12 @@
+package app.environment;
+
 import java.util.List;
 import java.util.ArrayList;
 
 public class GalaxyField {
     private SolarSystem solarSystem;
     // List of mother ships currently in the galaxy field
-    private List<MotherShip> motherShips = new ArrayList<MotherShip>();
+    private List<MotherShip> motherShips = new ArrayList<>();
 
     public SolarSystem getSolarSystem() {
         return solarSystem;

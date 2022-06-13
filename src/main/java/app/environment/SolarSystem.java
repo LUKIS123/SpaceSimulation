@@ -1,3 +1,7 @@
+package app.environment;
+
+import app.alien.AlienRace;
+
 public class SolarSystem {
     private int resourcesAmount;
     private int resourcesExtracted;

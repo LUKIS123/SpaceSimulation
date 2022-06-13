@@ -1,4 +1,9 @@
+package app.utility;
+
 import java.util.List;
+
+import app.alien.AlienRace;
+import app.environment.Galaxy;
 
 public class GalaxyPrinter {
     public static void printAliens(Galaxy galaxy) {

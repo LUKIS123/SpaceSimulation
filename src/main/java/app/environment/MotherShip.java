@@ -1,3 +1,7 @@
+package app.environment;
+
+import app.alien.AlienRace;
+
 public class MotherShip {
     private int positionX;
     private int positionY;

@@ -1,14 +1,25 @@
+package app.environment;
+
+import app.alien.AlienRace;
+import app.attack.algo.AlienRaceAttackingAlgo;
+import app.attack.algo.MoneyAlienRaceAttackingAlgo;
+import app.attack.algo.NeighbourAlienRaceAttackingAlgo;
+import app.attack.algo.RandomAlienRaceAttackingAlgo;
+import app.utility.AlienRaceTrader;
+import app.alien.AlienRelationships;
+import app.attack.*;
 import app.config.ApplicationProperties;
+import app.utility.AlienNameGenerator;
 
 import java.util.*;
 
 public class Galaxy {
     private int sizeX;
     private int sizeY;
-    private ArrayList<ArrayList<GalaxyField>> grid = new ArrayList<ArrayList<GalaxyField>>();
+    private ArrayList<ArrayList<GalaxyField>> grid = new ArrayList<>();
     private AlienRelationships alienRelationships = new AlienRelationships();
-    private List<AlienRace> alienRaces = new ArrayList<AlienRace>();
-    private Map<String, MotherShip> alienMotherShips = new HashMap<String, MotherShip>();
+    private List<AlienRace> alienRaces = new ArrayList<>();
+    private Map<String, MotherShip> alienMotherShips = new HashMap<>();
     private MotherShipMover motherShipMover = new MotherShipMover();
     private AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
     private AlienAttacker alienAttacker;
@@ -29,13 +40,13 @@ public class Galaxy {
     private void initAlienRaceAttackingAlgo() {
         AlienRaceAttackingAlgo alienRaceAttackingAlgo;
         switch (config.getAlienRaceAttackingAlgo()) {
-            case "RandomAlienRaceAttackingAlgo":
+            case "app.attack.algo.RandomAlienRaceAttackingAlgo":
                 alienRaceAttackingAlgo = new RandomAlienRaceAttackingAlgo();
                 break;
-            case "NeighbourAlienRaceAttackingAlgo":
+            case "app.attack.algo.NeighbourAlienRaceAttackingAlgo":
                 alienRaceAttackingAlgo = new NeighbourAlienRaceAttackingAlgo();
                 break;
-            case "MoneyAlienRaceAttackingAlgo":
+            case "app.attack.algo.MoneyAlienRaceAttackingAlgo":
                 alienRaceAttackingAlgo = new MoneyAlienRaceAttackingAlgo();
                 break;
             default:

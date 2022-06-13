@@ -1,8 +1,13 @@
+package app;
+
+import app.alien.AlienRace;
 import app.config.ArgumentHandler;
 import app.config.ApplicationProperties;
 import app.config.ConsoleConfiguration;
 import app.config.JsonConfiguration;
+import app.environment.Galaxy;
 import app.save.DataToCsvWriter;
+import app.utility.GalaxyPrinter;
 
 import java.util.ArrayList;
 import java.util.List;

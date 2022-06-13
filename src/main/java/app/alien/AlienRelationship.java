@@ -1,3 +1,5 @@
+package app.alien;
+
 public class AlienRelationship {
     private String alienName1;
     private String alienName2;
