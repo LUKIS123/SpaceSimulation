@@ -14,8 +14,8 @@ public class AlienRaceTrader {
         int resources = alienOneShip.getResources();
         int rel = galaxy.getAlienRelationships().getRelations().get(name1).get(name2).getRelationMeter();
         int money = resources * (rel + 120)/10;
-
-        System.out.println("\t\tThey traded " + resources + " resources for " + money + " money");
+        if (resources != 0)
+            System.out.println("\t\tThey traded " + resources + " resources for " + money + " money");
         System.out.println("\t\tRelationship changed to: " + rel);
 
         alienTwoSolarSystem.addResourcesExtracted(resources);
