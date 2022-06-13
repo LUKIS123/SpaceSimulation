@@ -1,11 +1,14 @@
 package app;
 
 import app.alien.AlienRace;
+import app.attack.AlienAttacker;
+import app.attack.AlienAttackerFactory;
 import app.config.ArgumentHandler;
 import app.config.ApplicationProperties;
 import app.config.ConsoleConfiguration;
 import app.config.JsonConfiguration;
 import app.environment.Galaxy;
+import app.environment.GalaxyCreator;
 import app.save.DataToCsvWriter;
 import app.utility.GalaxyPrinter;
 
@@ -19,7 +22,7 @@ public class Application {
         ApplicationProperties applicationProperties = argumentHandler.getProperties();
         System.out.println(applicationProperties);
 
-        Galaxy galaxy = new Galaxy(applicationProperties);
+        Galaxy galaxy = GalaxyCreator.create(applicationProperties, AlienAttackerFactory.create(applicationProperties));
 
         System.out.println("\n------------- Starting state: ------------");
         GalaxyPrinter.printAliens(galaxy);
@@ -28,7 +31,6 @@ public class Application {
             System.out.println("Generation " + (i + 1) + ":");
 
             galaxy.makeStep();
-            galaxy.print();
 
             if (i % 10 == 0) {
                 System.out.println("------------ STATE AFTER " + (i + 1) + " GENERATIONS: ------------");
