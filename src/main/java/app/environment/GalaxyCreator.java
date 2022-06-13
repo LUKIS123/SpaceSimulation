@@ -2,10 +2,6 @@ package app.environment;
 
 import app.alien.AlienRace;
 import app.attack.AlienAttacker;
-import app.attack.algo.AlienRaceAttackingAlgo;
-import app.attack.algo.MoneyAlienRaceAttackingAlgo;
-import app.attack.algo.NeighbourAlienRaceAttackingAlgo;
-import app.attack.algo.RandomAlienRaceAttackingAlgo;
 import app.config.ApplicationProperties;
 import app.utility.AlienNameGenerator;
 
@@ -42,7 +38,7 @@ public class GalaxyCreator {
     private static void initGrid(Galaxy galaxy, ApplicationProperties config) {
         // init grid
         for (int i = 0; i < galaxy.getSizeY(); i++) {
-            ArrayList<GalaxyField> line = new ArrayList<GalaxyField>();
+            ArrayList<GalaxyField> line = new ArrayList<>();
             for (int j = 0; j < galaxy.getSizeX(); j++) {
                 line.add(new GalaxyField(null));
             }

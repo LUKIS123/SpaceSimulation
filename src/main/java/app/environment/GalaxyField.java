@@ -36,8 +36,8 @@ public class GalaxyField {
     public String toString() {
         String[] output = {""};
         motherShips.forEach(motherShip -> {
-            if(motherShip.getOwner()!=null)
-            output[0] += motherShip.toString();
+            if (motherShip.getOwner() != null)
+                output[0] += motherShip.toString();
         });
         return output[0];
     }
