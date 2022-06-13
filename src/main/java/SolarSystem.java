@@ -1,13 +1,11 @@
 public class SolarSystem {
     private int resourcesAmount;
     private int resourcesExtracted;
-    private boolean hasOwner;
     private AlienRace owner;
 
-    public SolarSystem(int resourcesAmount, int resourcesExtracted, boolean hasOwner, AlienRace owner) {
+    public SolarSystem(int resourcesAmount, int resourcesExtracted, AlienRace owner) {
         this.resourcesAmount = resourcesAmount;
         this.resourcesExtracted = resourcesExtracted;
-        this.hasOwner = hasOwner;
         this.owner = owner;
         if (owner != null) {
             owner.addSolarSystem(this);
@@ -31,11 +29,7 @@ public class SolarSystem {
     }
 
     public boolean hasOwner() {
-        return hasOwner;
-    }
-
-    public void setHasOwner(boolean hasOwner) {
-        this.hasOwner = hasOwner;
+        return this.owner != null;
     }
 
     public AlienRace getOwner() {

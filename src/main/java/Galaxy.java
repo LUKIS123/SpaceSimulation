@@ -74,9 +74,9 @@ public class Galaxy {
                     SolarSystem solarSystem;
                     if (config.getSpawnAlienProbability() <= random.nextDouble()) {
                         AlienRace randomRace = this.alienRaces.get(random.nextInt(this.alienRaces.size()));
-                        solarSystem = new SolarSystem(resourcesAmount, 0, true, randomRace);
+                        solarSystem = new SolarSystem(resourcesAmount, 0, randomRace);
                     } else {
-                        solarSystem = new SolarSystem(resourcesAmount, 0, false, null);
+                        solarSystem = new SolarSystem(resourcesAmount, 0, null);
                     }
 
                     this.grid.get(i).set(j, new GalaxyField(solarSystem));
@@ -187,10 +187,9 @@ public class Galaxy {
                 currSolarSystem.setResourcesExtracted(0);
             } else if (!currSolarSystem.hasOwner()) {
                 System.out.println("\t\tShip landed on empty planet");
-                if (alienRace.getMoney() >= 1000) {
+                if (alienRace.getMoney() >= 100) {
                     System.out.println("\t\tEmpty planet became colonized");
-                    alienRace.addMoney(-1000);
-                    currSolarSystem.setHasOwner(true);
+                    alienRace.addMoney(-100);
                     currSolarSystem.setOwner(alienRace);
                 }
             } else {

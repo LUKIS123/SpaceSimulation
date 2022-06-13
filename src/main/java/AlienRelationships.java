@@ -1,16 +1,17 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class AlienRelationships {
-    private HashMap<String, HashMap<String, AlienRelationship>> relations = new HashMap<String, HashMap<String, AlienRelationship>>();
+    private Map<String, Map<String, AlienRelationship>> relations = new HashMap<String, Map<String, AlienRelationship>>();
 
     public AlienRelationships() {
     }
 
-    public HashMap<String, HashMap<String, AlienRelationship>> getRelations() {
+    public Map<String, Map<String, AlienRelationship>> getRelations() {
         return relations;
     }
 
-    public void setRelations(HashMap<String, HashMap<String, AlienRelationship>> relations) {
+    public void setRelations(Map<String, Map<String, AlienRelationship>> relations) {
         this.relations = relations;
     }
 
@@ -20,7 +21,7 @@ public class AlienRelationships {
     }
 
     public void addRelationship(String name1, String name2, int initialValue) {
-        HashMap<String, AlienRelationship> alienRelations = relations.get(name1);
+        Map<String, AlienRelationship> alienRelations = relations.get(name1);
         if (alienRelations == null) {
             relations.put(name1, new HashMap<String, AlienRelationship>());
         }
@@ -33,7 +34,7 @@ public class AlienRelationships {
     }
 
     public Boolean relationExists(String name1, String name2) {
-        HashMap<String, AlienRelationship> alienRelations = relations.get(name1);
+        Map<String, AlienRelationship> alienRelations = relations.get(name1);
         if (alienRelations == null)
             return false;
         return alienRelations.get(name2) != null;
