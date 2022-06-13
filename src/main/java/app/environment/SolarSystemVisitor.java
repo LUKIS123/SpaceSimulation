@@ -60,7 +60,7 @@ public class SolarSystemVisitor {
         }
 
         if (motherShip.getOwner() == solarSystem.getOwner()) {
-            // if mother ship's race planet extract resources
+            // if mother ship's race is the same as planet's owner extract resources
             extractResources(solarSystem, motherShip);
         } else if (!solarSystem.hasOwner()) {
             // if not colonized solar system try to colonize
