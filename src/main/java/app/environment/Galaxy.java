@@ -1,17 +1,15 @@
 package app.environment;
 
 import app.alien.AlienRace;
-import app.attack.algo.AlienRaceAttackingAlgo;
-import app.attack.algo.MoneyAlienRaceAttackingAlgo;
-import app.attack.algo.NeighbourAlienRaceAttackingAlgo;
-import app.attack.algo.RandomAlienRaceAttackingAlgo;
-import app.utility.AlienRaceTrader;
 import app.alien.AlienRelationships;
-import app.attack.*;
+import app.attack.AlienAttacker;
 import app.config.ApplicationProperties;
-import app.utility.AlienNameGenerator;
+import app.utility.AlienRaceTrader;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Galaxy {
     private int sizeX;
@@ -107,7 +105,7 @@ public class Galaxy {
         for (ArrayList<GalaxyField> line : grid) {
             for (GalaxyField field : line) {
                 if (!field.isEmpty()) {
-                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources()/100);
+                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources() / 100);
                 }
             }
         }
