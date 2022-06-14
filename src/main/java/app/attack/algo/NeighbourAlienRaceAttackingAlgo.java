@@ -20,18 +20,27 @@ public class NeighbourAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
         int y = attackingShip.getPositionY();
         for (int i = 1; i < size; i++) {
             SolarSystem solarSystem = scanLine(galaxy, x-i, y+i, x+i, y+i);
-            if (solarSystem != null)
-                return solarSystem.getOwner() == attackingShip.getOwner();
+            if (checkSolarSystem(attackingShip, attackedSolarSystem, solarSystem))
+               return solarSystem.getOwner() == attackingShip.getOwner();
+
             solarSystem = scanLine(galaxy, x-i, y-i, x+i, y-i);
-            if (solarSystem != null)
+            if (checkSolarSystem(attackingShip, attackedSolarSystem, solarSystem))
                 return solarSystem.getOwner() == attackingShip.getOwner();
             solarSystem = scanLine(galaxy, x-i, y+i, x-i, y-i);
-            if (solarSystem != null)
+            if (checkSolarSystem(attackingShip, attackedSolarSystem, solarSystem))
                 return solarSystem.getOwner() == attackingShip.getOwner();
             solarSystem = scanLine(galaxy, x+i, y+i, x+i, y-i);
-            if (solarSystem != null)
+            if (checkSolarSystem(attackingShip, attackedSolarSystem, solarSystem))
                 return solarSystem.getOwner() == attackingShip.getOwner();
         }
+        return false;
+    }
+
+    private boolean checkSolarSystem(MotherShip attackingShip, SolarSystem attackedSolarSystem, SolarSystem solarSystem) {
+        if (solarSystem == null)
+            return false;
+        if (solarSystem.getOwner() == attackingShip.getOwner() || solarSystem.getOwner() == attackedSolarSystem.getOwner())
+            return true;
         return false;
     }
 
