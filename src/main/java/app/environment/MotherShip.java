@@ -8,9 +8,6 @@ public class MotherShip {
     private int resources;
     private AlienRace owner;
 
-    public void visitSolarSystem(SolarSystem solarSystem) {
-    }
-
     public MotherShip(int positionX, int positionY, int recourses, AlienRace owner) {
         this.positionX = positionX;
         this.positionY = positionY;
