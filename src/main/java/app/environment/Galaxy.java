@@ -105,7 +105,9 @@ public class Galaxy {
         for (List<GalaxyField> line : grid) {
             for (GalaxyField field : line) {
                 if (!field.isEmpty()) {
-                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources() / 33);
+                    SolarSystem solarSystem = field.getSolarSystem();
+                    if (solarSystem.hasOwner())
+                        solarSystem.extractResources(config.getMinSolarSystemResources() / 33);
                 }
             }
         }
