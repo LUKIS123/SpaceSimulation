@@ -12,7 +12,7 @@ class ArgumentHandlerTest {
         ArgumentHandler argumentHandler = new ArgumentHandler(new MockConsoleConfiguration(), new MockJsonConfiguration());
 
         ApplicationProperties correctApplicationProperties = new ApplicationProperties(123, 0.111, 0.222, false,
-                12, 999, 888, 777, 666, "NeighbourRaceAttackingAlgo", 87, 100);
+                12, 999, 888, 777, 666, "NeighbourRaceAttackingAlgo", 87, 432);
         // Act
         ApplicationProperties applicationProperties = argumentHandler.getProperties();
         // Assert

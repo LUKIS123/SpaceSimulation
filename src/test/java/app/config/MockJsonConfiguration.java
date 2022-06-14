@@ -15,7 +15,7 @@ public class MockJsonConfiguration implements IJsonConfiguration {
         mockArgs.put("minSolarSystemResources", "777");
         mockArgs.put("maxSolarSystemResources", "666");
         mockArgs.put("alienRaceAttackingAlgo", "NeighbourRaceAttackingAlgo");
-        mockArgs.put("colonizationCost", "100");
+        mockArgs.put("colonizationCost", "432");
 
         return mockArgs;
     }
