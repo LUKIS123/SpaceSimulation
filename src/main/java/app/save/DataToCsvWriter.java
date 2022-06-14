@@ -13,7 +13,7 @@ public class DataToCsvWriter {
     }
 
     public void saveSimulationData(String[] dataLine) {
-        try (CSVWriter writer = new CSVWriter(new FileWriter(filename, true))) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filename, true), ',', CSVWriter.NO_QUOTE_CHARACTER)) {
             writer.writeNext(dataLine);
         } catch (IOException e) {
             throw new RuntimeException(e);
