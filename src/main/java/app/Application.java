@@ -33,7 +33,7 @@ public class Application {
             // saving state of each generation
             saveGenerationData.saveDataLines(galaxy, String.valueOf(i + 1));
 
-            if (i % 10 == 0) {
+            if (i % 10 == 0 && i != 0) {
                 System.out.println("------------ STATE AFTER " + (i + 1) + " GENERATIONS: ------------");
                 GalaxyPrinter.printAliens(galaxy);
             }
