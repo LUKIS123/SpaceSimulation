@@ -19,7 +19,7 @@ public class AlienAttacker {
         } else {
             System.out.println("\t\tDefenders win and destroy the mother ship");
             attackedSolarSystem.addResourcesExtracted(attackingShip.getResources());
-            attackingShip.destroyAndRespawn();
+            attackingShip.destroyAndRespawn(galaxy);
         }
     }
 }
