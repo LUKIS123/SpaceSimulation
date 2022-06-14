@@ -14,7 +14,7 @@ import java.util.Map;
 public class Galaxy {
     private int sizeX;
     private int sizeY;
-    private ArrayList<ArrayList<GalaxyField>> grid = new ArrayList<>();
+    private List<List<GalaxyField>> grid = new ArrayList<>();
     private AlienRelationships alienRelationships = new AlienRelationships();
     private List<AlienRace> alienRaces = new ArrayList<>();
     private Map<String, MotherShip> alienMotherShips = new HashMap<>();
@@ -53,11 +53,11 @@ public class Galaxy {
         this.sizeY = sizeY;
     }
 
-    public ArrayList<ArrayList<GalaxyField>> getGrid() {
+    public List<List<GalaxyField>> getGrid() {
         return grid;
     }
 
-    public void setGrid(ArrayList<ArrayList<GalaxyField>> grid) {
+    public void setGrid(List<List<GalaxyField>> grid) {
         this.grid = grid;
     }
 
@@ -102,10 +102,10 @@ public class Galaxy {
     }
 
     private void extractResources() {
-        for (ArrayList<GalaxyField> line : grid) {
+        for (List<GalaxyField> line : grid) {
             for (GalaxyField field : line) {
                 if (!field.isEmpty()) {
-                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources() / 100);
+                    field.getSolarSystem().extractResources(config.getMinSolarSystemResources() / 33);
                 }
             }
         }
@@ -119,10 +119,12 @@ public class Galaxy {
 
                     // Move ship
                     MotherShip motherShip = alienRace.getMotherShip();
+                    int shipOldX = motherShip.getPositionX();;
+                    int shipOldY = motherShip.getPositionY();
                     motherShipMover.randomMove(motherShip, this);
                     int shipX = motherShip.getPositionX();;
                     int shipY = motherShip.getPositionY();
-                    System.out.println("\t\tShip moved to x=" + shipX + " y=" + shipY);
+                    System.out.println("\t\tShip moved from x=" + shipOldX + " y=" + shipOldY + " to x=" + shipX + " y=" + shipY);
 
                     // visit solar system
                     SolarSystem currSolarSystem = grid.get(shipY).get(shipX).getSolarSystem();

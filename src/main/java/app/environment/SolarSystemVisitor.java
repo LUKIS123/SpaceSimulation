@@ -27,9 +27,9 @@ public class SolarSystemVisitor {
     private void colonizeSolarSystem(SolarSystem solarSystem, MotherShip motherShip) {
         AlienRace alienRace = motherShip.getOwner();
         System.out.println("\t\tShip landed on empty planet");
-        if (alienRace.getMoney() >= 100) {
+        if (alienRace.getMoney() >= config.getColonizationCost()) {
             System.out.println("\t\tEmpty planet became colonized");
-            alienRace.addMoney(-100);
+            alienRace.addMoney(-1 * config.getColonizationCost());
             solarSystem.setOwner(alienRace);
         }
     }

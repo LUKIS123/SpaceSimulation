@@ -2,6 +2,8 @@ package app.environment;
 
 import app.alien.AlienRace;
 
+import java.util.List;
+
 public class MotherShip {
     private int positionX;
     private int positionY;
@@ -52,8 +54,23 @@ public class MotherShip {
         this.resources += delta;
     }
 
-    public void destroyAndRespawn() {
+    public void destroyAndRespawn(Galaxy galaxy) {
         this.resources = 0;
+
+        if (this.getOwner().getSolarSystems().size() > 0) {
+            for (int i = 0; i < galaxy.getGrid().size(); i++) {
+                List<GalaxyField> line = galaxy.getGrid().get(i);
+                for (int j = 0; j < line.size(); j++) {
+                    GalaxyField field = line.get(j);
+                    SolarSystem solarSystem = field.getSolarSystem();
+                    if (solarSystem.getOwner() == owner) {
+                        this.positionX = j;
+                        this.positionY = i;
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     @Override
