@@ -2,3 +2,4 @@ build/*
 !build/libs
 .gradle
 .idea
+output.csv
