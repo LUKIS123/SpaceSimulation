@@ -63,6 +63,8 @@ public class MotherShip {
                 for (int j = 0; j < line.size(); j++) {
                     GalaxyField field = line.get(j);
                     SolarSystem solarSystem = field.getSolarSystem();
+                    if (solarSystem == null)
+                        continue;
                     if (solarSystem.getOwner() == owner) {
                         this.positionX = j;
                         this.positionY = i;
