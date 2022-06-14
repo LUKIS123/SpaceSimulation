@@ -111,20 +111,20 @@ public class Galaxy {
         }
     }
 
-            public void makeStep() {
-                extractResources();
+    public void makeStep() {
+        extractResources();
 
-                for (AlienRace alienRace : alienRaces) {
-                    System.out.println("\t" + alienRace.getName() + ": ");
+        for (AlienRace alienRace : alienRaces) {
+            System.out.println("\t" + alienRace.getName() + ": ");
 
-                    // Move ship
-                    MotherShip motherShip = alienRace.getMotherShip();
-                    motherShipMover.randomMove(motherShip, this);
+            // Move ship
+            MotherShip motherShip = alienRace.getMotherShip();
+            motherShipMover.randomMove(motherShip, this);
 
-                    // visit solar system
-                    int shipX = motherShip.getPositionX();
-                    int shipY = motherShip.getPositionY();
-                    SolarSystem currSolarSystem = grid.get(shipY).get(shipX).getSolarSystem();
+            // visit solar system
+            int shipX = motherShip.getPositionX();
+            int shipY = motherShip.getPositionY();
+            SolarSystem currSolarSystem = grid.get(shipY).get(shipX).getSolarSystem();
             this.solarSystemVisitor.visit(this, currSolarSystem, motherShip);
         }
     }
