@@ -1,19 +1,14 @@
 package app;
 
-import app.alien.AlienRace;
-import app.attack.AlienAttacker;
 import app.attack.AlienAttackerFactory;
-import app.config.ArgumentHandler;
 import app.config.ApplicationProperties;
+import app.config.ArgumentHandler;
 import app.config.ConsoleConfiguration;
 import app.config.JsonConfiguration;
 import app.environment.Galaxy;
 import app.environment.GalaxyCreator;
-import app.save.DataToCsvWriter;
+import app.save.SaveGenerationData;
 import app.utility.GalaxyPrinter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Application {
 
@@ -24,6 +19,10 @@ public class Application {
 
         Galaxy galaxy = GalaxyCreator.create(applicationProperties, AlienAttackerFactory.create(applicationProperties));
 
+        SaveGenerationData saveGenerationData = new SaveGenerationData("output.csv");
+        // saving starting state
+        saveGenerationData.saveDataLines(galaxy, "Starting state");
+
         System.out.println("\n------------- Starting state: ------------");
         GalaxyPrinter.printAliens(galaxy);
 
@@ -31,42 +30,15 @@ public class Application {
             System.out.println("Generation " + (i + 1) + ":");
 
             galaxy.makeStep();
+            // saving state of each generation
+            saveGenerationData.saveDataLines(galaxy, String.valueOf(i + 1));
 
             if (i % 10 == 0) {
                 System.out.println("------------ STATE AFTER " + (i + 1) + " GENERATIONS: ------------");
                 GalaxyPrinter.printAliens(galaxy);
             }
         }
-
         System.out.println("\n------------- Ending state: ------------");
         GalaxyPrinter.printAliens(galaxy);
-
-        saveToCsv(galaxy);
     }
-
-    public static void saveToCsv(Galaxy galaxy) {
-        // Save tp csv
-        List<String[]> dataLines = new ArrayList<>();
-        DataToCsvWriter dataFile = new DataToCsvWriter("output.csv");
-        // Flushing the data at first
-        dataFile.flushCSVFile();
-        // adding array od data to the list
-        dataLines.add(new String[]
-                {"Alien race", "Money", "Solar Systems"});
-        // saving it
-        dataFile.saveSimulationData(dataLines.get(0));
-        for (int i = 0; i < galaxy.getAlienRaces().size(); i++) {
-            AlienRace alienRace = galaxy.getAlienRaces().get(i);
-            // adding another array od data to the list
-            dataLines.add(new String[]{
-                    alienRace.getName(),
-                    String.valueOf(alienRace.getMoney()),
-                    String.valueOf(alienRace.getSolarSystems().size())
-            });
-            // saving it
-            dataFile.saveSimulationData(dataLines.get(i+1));
-        }
-    }
-
-
 }

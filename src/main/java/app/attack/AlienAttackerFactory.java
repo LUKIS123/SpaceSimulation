@@ -1,6 +1,5 @@
 package app.attack;
 
-import app.attack.AlienAttacker;
 import app.attack.algo.AlienRaceAttackingAlgo;
 import app.attack.algo.MoneyAlienRaceAttackingAlgo;
 import app.attack.algo.NeighbourAlienRaceAttackingAlgo;
