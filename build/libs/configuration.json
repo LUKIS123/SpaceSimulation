@@ -10,6 +10,7 @@
     "minSolarSystemResources": 100,
     "maxSolarSystemResources": 1234,
     "alienRaceAttackingAlgo": "NeighbourRaceAttackingAlgo",
-    "generationCount": 5
+    "generationCount": 5,
+    "colonizationCost": 100
   }
 }
