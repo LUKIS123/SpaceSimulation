@@ -47,7 +47,6 @@ public class SolarSystemVisitor {
         }
 
         if (galaxy.getAlienRelationships().getRelations().get(name1).get(name2).getRelationMeter() > -100) {
-            System.out.println("\t\tThey traded");
             alienRaceTrader.trade(galaxy, motherShip, solarSystem);
         } else {
             System.out.println("\t\tThey fought with each other");
