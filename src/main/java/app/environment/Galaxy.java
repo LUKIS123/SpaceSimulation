@@ -119,14 +119,11 @@ public class Galaxy {
 
                     // Move ship
                     MotherShip motherShip = alienRace.getMotherShip();
-                    int shipOldX = motherShip.getPositionX();;
-                    int shipOldY = motherShip.getPositionY();
                     motherShipMover.randomMove(motherShip, this);
-                    int shipX = motherShip.getPositionX();;
-                    int shipY = motherShip.getPositionY();
-                    System.out.println("\t\tShip moved from x=" + shipOldX + " y=" + shipOldY + " to x=" + shipX + " y=" + shipY);
 
                     // visit solar system
+                    int shipX = motherShip.getPositionX();
+                    int shipY = motherShip.getPositionY();
                     SolarSystem currSolarSystem = grid.get(shipY).get(shipX).getSolarSystem();
             this.solarSystemVisitor.visit(this, currSolarSystem, motherShip);
         }

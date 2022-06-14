@@ -42,6 +42,10 @@ public class MotherShipMover {
         motherShip.setPositionX(x + deltaX);
         motherShip.setPositionY(y + deltaY);
         galaxy.getGrid().get(x + deltaX).get(y + deltaY).getMotherShips().add(motherShip);
+
+        int newX = motherShip.getPositionX();
+        int newY = motherShip.getPositionY();
+        System.out.println("\t\tShip moved from x=" + x + " y=" + y + " to x=" + newX + " y=" + newY);
     }
 
     void randomMove(MotherShip ship, Galaxy galaxy) {
