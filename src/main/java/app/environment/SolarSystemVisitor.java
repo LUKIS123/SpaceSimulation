@@ -2,6 +2,7 @@ package app.environment;
 
 import app.alien.AlienRace;
 import app.attack.AlienAttacker;
+import app.config.ApplicationProperties;
 import app.utility.AlienRaceTrader;
 
 public class SolarSystemVisitor {
@@ -9,9 +10,11 @@ public class SolarSystemVisitor {
     private MotherShipMover motherShipMover = new MotherShipMover();
     private AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
     private AlienAttacker alienAttacker;
+    private ApplicationProperties config;
 
-    public SolarSystemVisitor(AlienAttacker attacker) {
+    public SolarSystemVisitor(AlienAttacker attacker, ApplicationProperties config) {
         this.alienAttacker = attacker;
+        this.config = config;
     }
 
     private void extractResources(SolarSystem solarSystem, MotherShip motherShip) {

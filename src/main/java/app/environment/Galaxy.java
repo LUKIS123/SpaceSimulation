@@ -26,7 +26,7 @@ public class Galaxy {
 
     public Galaxy(ApplicationProperties config, AlienAttacker alienAttacker) {
         this.config = config;
-        this.solarSystemVisitor = new SolarSystemVisitor(alienAttacker);
+        this.solarSystemVisitor = new SolarSystemVisitor(alienAttacker, config);
     }
 
     public ApplicationProperties getConfig() {
