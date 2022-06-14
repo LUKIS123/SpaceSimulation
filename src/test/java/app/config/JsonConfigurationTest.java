@@ -10,11 +10,11 @@ class JsonConfigurationTest {
 
     @Test
     void getConfig() {
-        //Arrange
+        // Arrange
         JsonConfiguration jsonConfiguration = new JsonConfiguration("src/test/resources/testConfiguration.json");
-        //Act
+        // Act
         Map<String, String> testArgsMap = jsonConfiguration.getConfig();
-        //Assert
+        // Assert
         assertEquals("111", testArgsMap.get("galaxySize"));
         assertEquals("0.1", testArgsMap.get("spawnAlienProbability"));
         assertEquals("0.2", testArgsMap.get("spawnSolarSystemProbability"));

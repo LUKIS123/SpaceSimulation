@@ -30,7 +30,7 @@ public class GalaxyCreator {
         for (int i = 0; i < alienAmount; i++) {
             int randomMoneyNumber = config.getMinStartingMoney() +
                     random.nextInt(config.getMaxStartingMoney() - config.getMinStartingMoney());
-            AlienRace alienRace = new AlienRace(AlienNameGenerator.generate(), randomMoneyNumber);
+            AlienRace alienRace = new AlienRace(AlienNameGenerator.generate(random.nextInt()), randomMoneyNumber);
             galaxy.getAlienRaces().add(alienRace);
         }
     }

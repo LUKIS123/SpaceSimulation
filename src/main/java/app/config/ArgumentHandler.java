@@ -70,6 +70,6 @@ public class ArgumentHandler {
                 getDoubleValue("spawnSolarSystemProbability"), getBooleanValue("randomAlienAmount"),
                 getIntValue("alienAmount"), getIntValue("minStartingMoney"), getIntValue("maxStartingMoney"),
                 getIntValue("minSolarSystemResources"), getIntValue("maxSolarSystemResources"),
-                getStringValue("alienRaceAttackingAlgo"), getIntValue("generationCount"));
+                getStringValue("alienRaceAttackingAlgo"), getIntValue("generationCount"), getIntValue("colonizationCost"));
     }
 }

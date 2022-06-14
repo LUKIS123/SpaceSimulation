@@ -8,14 +8,14 @@ class ArgumentHandlerTest {
 
     @Test
     void getProperties() {
-        //Arrange
+        // Arrange
         ArgumentHandler argumentHandler = new ArgumentHandler(new MockConsoleConfiguration(), new MockJsonConfiguration());
 
         ApplicationProperties correctApplicationProperties = new ApplicationProperties(123, 0.111, 0.222, false,
-                12, 999, 888, 777, 666, "NeighbourRaceAttackingAlgo", 87);
-        //Act
+                12, 999, 888, 777, 666, "NeighbourRaceAttackingAlgo", 87, 100);
+        // Act
         ApplicationProperties applicationProperties = argumentHandler.getProperties();
-        //Assert
+        // Assert
         assertEquals(correctApplicationProperties.getGalaxySize(), applicationProperties.getGalaxySize());
         assertEquals(correctApplicationProperties.getSpawnAlienProbability(), applicationProperties.getSpawnAlienProbability());
         assertEquals(correctApplicationProperties.getSpawnSolarSystemProbability(), applicationProperties.getSpawnSolarSystemProbability());

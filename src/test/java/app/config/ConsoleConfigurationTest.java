@@ -10,14 +10,14 @@ class ConsoleConfigurationTest {
 
     @Test
     void getConfig() {
-        //Arrange
+        // Arrange
         String[] args = {"--galaxySize", "2137", "--spawnAlienProbability", "0.420", "--spawnSolarSystemProbability", "0.69", "--randomAlienAmount", "true",
                 "--alienAmount", "911", "--minStartingMoney", "11", "--maxStartingMoney", "888", "--minSolarSystemResources", "0", "--maxSolarSystemResources", "555",
-                "--alienRaceAttackingAlgo", "NeighbourRaceAttackingAlgo", "--generationCount", "99"};
+                "--alienRaceAttackingAlgo", "NeighbourRaceAttackingAlgo", "--generationCount", "99", "--colonizationCost", "100"};
         ConsoleConfiguration consoleConfiguration = new ConsoleConfiguration(args);
-        //Act
+        // Act
         Map<String, String> testArgsMap = consoleConfiguration.getConfig();
-        //Assert
+        // Assert
         assertEquals("2137", testArgsMap.get("galaxySize"));
         assertEquals("0.420", testArgsMap.get("spawnAlienProbability"));
         assertEquals("0.69", testArgsMap.get("spawnSolarSystemProbability"));

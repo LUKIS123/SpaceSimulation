@@ -12,6 +12,7 @@ public class ApplicationProperties {
     private final int maxSolarSystemResources;
     private final String alienRaceAttackingAlgo;
     private final int generationCount;
+    private final int colonizationCost;
 
     public ApplicationProperties(
             int galaxySize,
@@ -23,7 +24,7 @@ public class ApplicationProperties {
             int maxStartingMoney,
             int minSolarSystemResources,
             int maxSolarSystemResources,
-            String alienRaceAttackingAlgo, int generationCount) {
+            String alienRaceAttackingAlgo, int generationCount, int colonizationCost) {
         this.galaxySize = galaxySize;
         this.spawnAlienProbability = spawnAlienProbability;
         this.spawnSolarSystemProbability = spawnSolarSystemProbability;
@@ -35,10 +36,15 @@ public class ApplicationProperties {
         this.maxSolarSystemResources = maxSolarSystemResources;
         this.alienRaceAttackingAlgo = alienRaceAttackingAlgo;
         this.generationCount = generationCount;
+        this.colonizationCost = colonizationCost;
     }
 
     public double getSpawnSolarSystemProbability() {
         return spawnSolarSystemProbability;
+    }
+
+    public int getColonizationCost() {
+        return colonizationCost;
     }
 
     public boolean isRandomAlienAmount() {
@@ -95,6 +101,7 @@ public class ApplicationProperties {
                 ", maxSolarSystemResources=" + maxSolarSystemResources +
                 ", alienRaceAttackingAlgo='" + alienRaceAttackingAlgo + '\'' +
                 ", generationCount=" + generationCount +
+                ", colonizationCost=" + colonizationCost +
                 '}';
     }
 }
