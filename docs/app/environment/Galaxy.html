@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Galaxy</span>
 extends java.lang.Object</pre>
+<div class="block">A class in which the whole simulation is happening. Should be created with GalaxyCreator.</div>
 </li>
 </ul>
 </div>
@@ -222,7 +223,9 @@ extends java.lang.Object</pre>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#makeStep()">makeStep</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Make a step in the simulation.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -301,6 +304,11 @@ extends java.lang.Object</pre>
 <h4>Galaxy</h4>
 <pre>public&nbsp;Galaxy&#8203;(<a href="../config/ApplicationProperties.html" title="class in app.config">ApplicationProperties</a>&nbsp;config,
               <a href="../attack/AlienAttacker.html" title="class in app.attack">AlienAttacker</a>&nbsp;alienAttacker)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>config</code> - Config of the current context.</dd>
+<dd><code>alienAttacker</code> - Attacking algorithm that will be used in the simulation.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -482,6 +490,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>makeStep</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;makeStep()</pre>
+<div class="block">Make a step in the simulation. It moves all the mother ships and makes them interact with the field they moved to.</div>
 </li>
 </ul>
 </li>

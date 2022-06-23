@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">AlienRace</span>
 extends java.lang.Object</pre>
+<div class="block">A class for representing an alien race in the simulation.</div>
 </li>
 </ul>
 </div>
@@ -177,12 +178,16 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addMoney(int)">addMoney</a></span>&#8203;(int&nbsp;delta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add money owned by the alien race.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addSolarSystem(app.environment.SolarSystem)">addSolarSystem</a></span>&#8203;(<a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;solarSystem)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add a solar system to the list of solar systems occupied by this race.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -207,7 +212,9 @@ extends java.lang.Object</pre>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeSolarSystem(app.environment.SolarSystem)">removeSolarSystem</a></span>&#8203;(<a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;solarSystem)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Remove a solar system to the list of solar systems occupied by this race.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -261,6 +268,11 @@ extends java.lang.Object</pre>
 <h4>AlienRace</h4>
 <pre>public&nbsp;AlienRace&#8203;(java.lang.String&nbsp;name,
                  int&nbsp;money)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - Name of the alien race.</dd>
+<dd><code>money</code> - Starting money amount.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -289,6 +301,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>addSolarSystem</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addSolarSystem&#8203;(<a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;solarSystem)</pre>
+<div class="block">Add a solar system to the list of solar systems occupied by this race.
+ It's necessary because the list is later used by other methods.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>solarSystem</code> - Solar system to add.</dd>
+</dl>
 </li>
 </ul>
 <a id="removeSolarSystem(app.environment.SolarSystem)">
@@ -298,6 +316,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>removeSolarSystem</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeSolarSystem&#8203;(<a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;solarSystem)</pre>
+<div class="block">Remove a solar system to the list of solar systems occupied by this race.
+ It's necessary because the list is later used by other methods.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>solarSystem</code> - Solar system to add.</dd>
+</dl>
 </li>
 </ul>
 <a id="getName()">
@@ -352,6 +376,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>addMoney</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addMoney&#8203;(int&nbsp;delta)</pre>
+<div class="block">Add money owned by the alien race.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>delta</code> - Money amount to add.</dd>
+</dl>
 </li>
 </ul>
 <a id="setMotherShip(app.environment.MotherShip)">

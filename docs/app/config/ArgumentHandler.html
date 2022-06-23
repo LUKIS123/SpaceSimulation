@@ -132,6 +132,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">ArgumentHandler</span>
 extends java.lang.Object</pre>
+<div class="block">This class is used to combine the two Maps of
+    String value data, parse them and return
+    data in form of ArgumentProperties object.
+    The console input is taken as preferred values.</div>
 </li>
 </ul>
 </div>
@@ -177,7 +181,10 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="ApplicationProperties.html" title="class in app.config">ApplicationProperties</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperties()">getProperties</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">It uses the private getValue methods to parse
+        the String data to the expected types of values.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -211,6 +218,11 @@ extends java.lang.Object</pre>
 <h4>ArgumentHandler</h4>
 <pre>public&nbsp;ArgumentHandler&#8203;(<a href="IConsoleConfiguration.html" title="interface in app.config">IConsoleConfiguration</a>&nbsp;consoleConfig,
                        <a href="IJsonConfiguration.html" title="interface in app.config">IJsonConfiguration</a>&nbsp;jsonConfig)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>consoleConfig</code> - instance of the ConsoleConfiguration interface.</dd>
+<dd><code>jsonConfig</code> - instance of the JsonConfiguration interface.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -230,6 +242,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getProperties</h4>
 <pre class="methodSignature">public&nbsp;<a href="ApplicationProperties.html" title="class in app.config">ApplicationProperties</a>&nbsp;getProperties()</pre>
+<div class="block">It uses the private getValue methods to parse
+        the String data to the expected types of values.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>ApplicationProperties -
+        object of the class used fot holding the data.</dd>
+</dl>
 </li>
 </ul>
 </li>

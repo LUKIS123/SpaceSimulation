@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">AlienAttacker</span>
 extends java.lang.Object</pre>
+<div class="block">A wrapper for the attacking algorithm interface.</div>
 </li>
 </ul>
 </div>
@@ -178,7 +179,9 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#attack(app.environment.Galaxy,app.environment.MotherShip,app.environment.SolarSystem)">attack</a></span>&#8203;(<a href="../environment/Galaxy.html" title="class in app.environment">Galaxy</a>&nbsp;galaxy,
       <a href="../environment/MotherShip.html" title="class in app.environment">MotherShip</a>&nbsp;attackingShip,
       <a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;attackedSolarSystem)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Determine the winner of the war.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -211,6 +214,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>AlienAttacker</h4>
 <pre>public&nbsp;AlienAttacker&#8203;(<a href="algo/AlienRaceAttackingAlgo.html" title="interface in app.attack.algo">AlienRaceAttackingAlgo</a>&nbsp;attackingAlgo)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>attackingAlgo</code> - Attacking algorithm to be initialized with.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -232,6 +239,14 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;attack&#8203;(<a href="../environment/Galaxy.html" title="class in app.environment">Galaxy</a>&nbsp;galaxy,
                    <a href="../environment/MotherShip.html" title="class in app.environment">MotherShip</a>&nbsp;attackingShip,
                    <a href="../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;attackedSolarSystem)</pre>
+<div class="block">Determine the winner of the war. If attacking side win they take over the planet. If defending side win they
+ destroy the mother ship and take over its resources.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>galaxy</code> - Galaxy in which its happening.</dd>
+<dd><code>attackingShip</code> - Mother ship that is attacking the solar system.</dd>
+<dd><code>attackedSolarSystem</code> - Solar system that is on the defending side.</dd>
+</dl>
 </li>
 </ul>
 </li>

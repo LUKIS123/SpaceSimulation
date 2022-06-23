@@ -2,10 +2,20 @@ package app.config;
 
 import java.util.Map;
 
+/**
+ * This class is used to combine the two Maps of
+    String value data, parse them and return
+    data in form of ArgumentProperties object.
+    The console input is taken as preferred values.
+ */
 public class ArgumentHandler {
     private final Map<String, String> consoleArgsMap;
     private final Map<String, String> jsonArgsMap;
 
+    /**
+     * @param consoleConfig instance of the ConsoleConfiguration interface.
+     * @param jsonConfig instance of the JsonConfiguration interface.
+     */
     public ArgumentHandler(IConsoleConfiguration consoleConfig, IJsonConfiguration jsonConfig) {
 
         this.consoleArgsMap = consoleConfig.getConfig();
@@ -65,6 +75,12 @@ public class ArgumentHandler {
         }
     }
 
+    /**
+     * It uses the private getValue methods to parse
+        the String data to the expected types of values.
+     * @return ApplicationProperties -
+        object of the class used fot holding the data.
+     */
     public ApplicationProperties getProperties() {
         return new ApplicationProperties(getIntValue("galaxySize"), getDoubleValue("spawnAlienProbability"),
                 getDoubleValue("spawnSolarSystemProbability"), getBooleanValue("randomAlienAmount"),

@@ -1,5 +1,10 @@
 package app.config;
 
+/**
+ * The class holds given arguments -
+    variables used to run the simulation.
+    It contains getters for each argument.
+ */
 public class ApplicationProperties {
     private final int galaxySize;
     private final double spawnAlienProbability;

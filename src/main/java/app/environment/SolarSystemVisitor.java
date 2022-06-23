@@ -10,10 +10,10 @@ import app.utility.AlienRaceTrader;
  */
 public class SolarSystemVisitor {
 
-    private MotherShipMover motherShipMover = new MotherShipMover();
-    private AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
-    private AlienAttacker alienAttacker;
-    private ApplicationProperties config;
+    private final MotherShipMover motherShipMover = new MotherShipMover();
+    private final AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
+    private final AlienAttacker alienAttacker;
+    private final ApplicationProperties config;
 
     /**
      * @param attacker Chosen attacking algorithm.

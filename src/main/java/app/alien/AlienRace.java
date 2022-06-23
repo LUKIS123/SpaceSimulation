@@ -10,8 +10,8 @@ import java.util.List;
  * A class for representing an alien race in the simulation.
  */
 public class AlienRace {
-    static private List<String> usedNames = new ArrayList<>();
-    private List<SolarSystem> solarSystems = new ArrayList<>();
+    static private final List<String> usedNames = new ArrayList<>();
+    private final List<SolarSystem> solarSystems = new ArrayList<>();
     private String name;
     private int money;
     private MotherShip motherShip;

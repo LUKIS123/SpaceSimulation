@@ -15,5 +15,5 @@ public interface AlienRaceAttackingAlgo {
      * @param attackedSolarSystem Solar system that is on the defending side.
      * @return returns if the attacking ship won or not.
      */
-    public boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem);
+    boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem);
 }

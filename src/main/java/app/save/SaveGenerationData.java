@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * This class serves to prepare the csv file
+    and extract data from Galaxy class.
  */
 public class SaveGenerationData {
 
@@ -24,7 +25,8 @@ public class SaveGenerationData {
     }
 
     /**
-     *
+     * Private method used in the constructor,
+        it clears the csv file and adds the headline.
      */
     private void prepareFile() {
         this.dataToCsvWriter.flushCSVFile();
@@ -32,6 +34,7 @@ public class SaveGenerationData {
     }
 
     /**
+     * This method extracts the generation data and saves it.
      * @param galaxyState object of the Galaxy class from which simulation data is extracted.
      * @param generationCount number of current generation.
      */

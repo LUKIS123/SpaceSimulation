@@ -24,7 +24,7 @@ public class Galaxy {
     private MotherShipMover motherShipMover = new MotherShipMover();
     private AlienRaceTrader alienRaceTrader = new AlienRaceTrader();
     private ApplicationProperties config;
-    private SolarSystemVisitor solarSystemVisitor;
+    private final SolarSystemVisitor solarSystemVisitor;
 
 
     /**

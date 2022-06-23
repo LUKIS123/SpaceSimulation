@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">AlienRelationships</span>
 extends java.lang.Object</pre>
+<div class="block">A class representing a relationship of every alien race.</div>
 </li>
 </ul>
 </div>
@@ -178,14 +179,18 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addRelationship(java.lang.String,java.lang.String,int)">addRelationship</a></span>&#8203;(java.lang.String&nbsp;name1,
                java.lang.String&nbsp;name2,
                int&nbsp;initialValue)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Add a relationship to the relationships list.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeRelationship(java.lang.String,java.lang.String,int)">changeRelationship</a></span>&#8203;(java.lang.String&nbsp;name1,
                   java.lang.String&nbsp;name2,
                   int&nbsp;delta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Change a relationship by a given value.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.Map&lt;java.lang.String,&#8203;java.util.Map&lt;java.lang.String,&#8203;<a href="AlienRelationship.html" title="class in app.alien">AlienRelationship</a>&gt;&gt;</code></td>
@@ -273,6 +278,13 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeRelationship&#8203;(java.lang.String&nbsp;name1,
                                java.lang.String&nbsp;name2,
                                int&nbsp;delta)</pre>
+<div class="block">Change a relationship by a given value.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name1</code> - Name of the first alien of the relationship.</dd>
+<dd><code>name2</code> - Name of the second alien of the relationship.</dd>
+<dd><code>delta</code> - Amount to change the relationship meter.</dd>
+</dl>
 </li>
 </ul>
 <a id="addRelationship(java.lang.String,java.lang.String,int)">
@@ -284,6 +296,13 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;addRelationship&#8203;(java.lang.String&nbsp;name1,
                             java.lang.String&nbsp;name2,
                             int&nbsp;initialValue)</pre>
+<div class="block">Add a relationship to the relationships list.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name1</code> - Name of the first alien of the relationship.</dd>
+<dd><code>name2</code> - Name of the second alien of the relationship.</dd>
+<dd><code>initialValue</code> - Initial value of the relationship.</dd>
+</dl>
 </li>
 </ul>
 <a id="relationExists(java.lang.String,java.lang.String)">
@@ -294,6 +313,13 @@ extends java.lang.Object</pre>
 <h4>relationExists</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Boolean&nbsp;relationExists&#8203;(java.lang.String&nbsp;name1,
                                         java.lang.String&nbsp;name2)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name1</code> - Name of the first alien of the relationship.</dd>
+<dd><code>name2</code> - Name of the second alien of the relationship.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns true if a relationship exists, otherwise false.</dd>
+</dl>
 </li>
 </ul>
 </li>

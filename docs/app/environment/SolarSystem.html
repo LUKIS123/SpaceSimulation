@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">SolarSystem</span>
 extends java.lang.Object</pre>
+<div class="block">Class for simulating the solar systems. Each solar system has its owner that extracts the solar system's resources.</div>
 </li>
 </ul>
 </div>
@@ -183,7 +184,9 @@ extends java.lang.Object</pre>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#extractResources(int)">extractResources</a></span>&#8203;(int&nbsp;amount)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for extracting resources from a planet.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../alien/AlienRace.html" title="class in app.alien">AlienRace</a></code></td>
@@ -253,6 +256,12 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;SolarSystem&#8203;(int&nbsp;resourcesAmount,
                    int&nbsp;resourcesExtracted,
                    <a href="../alien/AlienRace.html" title="class in app.alien">AlienRace</a>&nbsp;owner)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>resourcesAmount</code> - Starting resources amount.</dd>
+<dd><code>resourcesExtracted</code> - Starting resources that are already extracted. Usually set to 0.</dd>
+<dd><code>owner</code> - The current owner of the solar system.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -344,6 +353,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>extractResources</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;extractResources&#8203;(int&nbsp;amount)</pre>
+<div class="block">Method for extracting resources from a planet. Each step of the simulations aliens extract a given amount.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>amount</code> - Amount of resources to extract.</dd>
+</dl>
 </li>
 </ul>
 </li>

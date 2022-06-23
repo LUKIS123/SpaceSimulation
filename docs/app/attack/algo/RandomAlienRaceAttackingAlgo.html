@@ -137,6 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">RandomAlienRaceAttackingAlgo</span>
 extends java.lang.Object
 implements <a href="AlienRaceAttackingAlgo.html" title="interface in app.attack.algo">AlienRaceAttackingAlgo</a></pre>
+<div class="block">Check who should win the war randomly.</div>
 </li>
 </ul>
 </div>
@@ -183,7 +184,9 @@ implements <a href="AlienRaceAttackingAlgo.html" title="interface in app.attack.
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#attack(app.environment.Galaxy,app.environment.MotherShip,app.environment.SolarSystem)">attack</a></span>&#8203;(<a href="../../environment/Galaxy.html" title="class in app.environment">Galaxy</a>&nbsp;galaxy,
       <a href="../../environment/MotherShip.html" title="class in app.environment">MotherShip</a>&nbsp;attackingShip,
       <a href="../../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;attackedSolarSystem)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Check who should win the fight.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -237,9 +240,17 @@ implements <a href="AlienRaceAttackingAlgo.html" title="interface in app.attack.
 <pre class="methodSignature">public&nbsp;boolean&nbsp;attack&#8203;(<a href="../../environment/Galaxy.html" title="class in app.environment">Galaxy</a>&nbsp;galaxy,
                       <a href="../../environment/MotherShip.html" title="class in app.environment">MotherShip</a>&nbsp;attackingShip,
                       <a href="../../environment/SolarSystem.html" title="class in app.environment">SolarSystem</a>&nbsp;attackedSolarSystem)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="AlienRaceAttackingAlgo.html#attack(app.environment.Galaxy,app.environment.MotherShip,app.environment.SolarSystem)">AlienRaceAttackingAlgo</a></code></span></div>
+<div class="block">Check who should win the fight.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="AlienRaceAttackingAlgo.html#attack(app.environment.Galaxy,app.environment.MotherShip,app.environment.SolarSystem)">attack</a></code>&nbsp;in interface&nbsp;<code><a href="AlienRaceAttackingAlgo.html" title="interface in app.attack.algo">AlienRaceAttackingAlgo</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>galaxy</code> - Galaxy in which its happening.</dd>
+<dd><code>attackingShip</code> - Mother ship that is attacking the solar system.</dd>
+<dd><code>attackedSolarSystem</code> - Solar system that is on the defending side.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>returns if the attacking ship won or not.</dd>
 </dl>
 </li>
 </ul>

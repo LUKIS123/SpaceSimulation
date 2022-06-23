@@ -9,7 +9,7 @@ import app.environment.SolarSystem;
  * A wrapper for the attacking algorithm interface.
  */
 public class AlienAttacker {
-    private AlienRaceAttackingAlgo attackingAlgo;
+    private final AlienRaceAttackingAlgo attackingAlgo;
 
     /**
      * @param attackingAlgo Attacking algorithm to be initialized with.
