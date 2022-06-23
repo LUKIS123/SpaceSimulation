@@ -10,7 +10,20 @@ import app.environment.GalaxyCreator;
 import app.save.SaveGenerationData;
 import app.utility.GalaxyPrinter;
 
+
+/**
+ * Class Application is the main class.
+ * It combines the individual elements of the simulation which are responsible for individual tasks.
+ */
 public class Application {
+
+    /**
+     * This static method runs the whole simulation.
+     * Firstly, the provided arguments are being parsed, which then are handed over to
+        the class responsible for the simulation making another step each generation.
+        In the meantime simulation data is being saved to a csv file.
+     * @param args the array of Strings, which may be provided by the user from console.
+     */
 
     public static void main(String[] args) {
         ArgumentHandler argumentHandler = new ArgumentHandler(new ConsoleConfiguration(args), new JsonConfiguration("configuration.json"));
