@@ -1,7 +1,7 @@
 # SpaceSimulation
  OOP Project - a simple Agent-based simulation
 
-The program can be run either by ```gadle``` task ```run``` with following set of arguments, for example:
+The program can be run either by ```gradle``` task ```run``` with following set of arguments, for example:
 ```java
 run --args="--galaxySize 100 --spawnAlienProbability 0.5 --spawnSolarSystemProbability 0.5 --randomAlienAmount false --alienAmount 5 --minStartingMoney 1000 --maxStartingMoney 1234 --minSolarSystemResources 100 --maxSolarSystemResources 1234 --alienRaceAttackingAlgo NeighbourRaceAttackingAlgo --generationCount 10 --colonizationCost 100"
 ```
