@@ -2,11 +2,19 @@ package app.environment;
 
 import app.alien.AlienRace;
 
+/**
+ * Class for simulating the solar systems. Each solar system has its owner that extracts the solar system's resources.
+ */
 public class SolarSystem {
     private int resourcesAmount;
     private int resourcesExtracted;
     private AlienRace owner;
 
+    /**
+     * @param resourcesAmount Starting resources amount.
+     * @param resourcesExtracted Starting resources that are already extracted. Usually set to 0.
+     * @param owner The current owner of the solar system.
+     */
     public SolarSystem(int resourcesAmount, int resourcesExtracted, AlienRace owner) {
         this.resourcesAmount = resourcesAmount;
         this.resourcesExtracted = resourcesExtracted;
@@ -54,6 +62,10 @@ public class SolarSystem {
         this.resourcesExtracted += delta;
     }
 
+    /**
+     * Method for extracting resources from a planet. Each step of the simulations aliens extract a given amount.
+     * @param amount Amount of resources to extract.
+     */
     public void extractResources(int amount) {
         if (amount > resourcesAmount)
             amount = resourcesAmount;

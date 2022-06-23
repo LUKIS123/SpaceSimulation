@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A class in which the whole simulation is happening. Should be created with GalaxyCreator.
+ */
 public class Galaxy {
     private int sizeX;
     private int sizeY;
@@ -24,6 +27,10 @@ public class Galaxy {
     private SolarSystemVisitor solarSystemVisitor;
 
 
+    /**
+     * @param config Config of the current context.
+     * @param alienAttacker Attacking algorithm that will be used in the simulation.
+     */
     public Galaxy(ApplicationProperties config, AlienAttacker alienAttacker) {
         this.config = config;
         this.solarSystemVisitor = new SolarSystemVisitor(alienAttacker, config);
@@ -101,6 +108,9 @@ public class Galaxy {
         this.alienRaceTrader = alienRaceTrader;
     }
 
+    /**
+     * A method used for extracting all solar systems' resources each step by its owners.
+     */
     private void extractResources() {
         for (List<GalaxyField> line : grid) {
             for (GalaxyField field : line) {
@@ -113,6 +123,9 @@ public class Galaxy {
         }
     }
 
+    /**
+     * Make a step in the simulation. It moves all the mother ships and makes them interact with the field they moved to.
+     */
     public void makeStep() {
         extractResources();
 

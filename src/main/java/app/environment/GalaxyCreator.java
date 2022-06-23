@@ -9,9 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * A class for creating and initializing a galaxy class.
+ */
 public class GalaxyCreator {
     private static final Random random = new Random();
 
+    /**
+     * Create and return a galaxy.
+     * @param config Config of the current context.
+     * @param attacker attacking algorithm used in the simulation.
+     * @return Returns the generated galaxy.
+     */
     public static Galaxy create(ApplicationProperties config, AlienAttacker attacker) {
         Galaxy galaxy = new Galaxy(config, attacker);
 
@@ -25,6 +34,11 @@ public class GalaxyCreator {
         return galaxy;
     }
 
+    /**
+     * Create and initialize all alien races that will be used in the simulation.
+     * @param galaxy Galaxy to initialize.
+     * @param config Config of the current context.
+     */
     private static void initAliens(Galaxy galaxy, ApplicationProperties config) {
         int alienAmount = config.getAlienAmount();
         for (int i = 0; i < alienAmount; i++) {
@@ -35,6 +49,11 @@ public class GalaxyCreator {
         }
     }
 
+    /**
+     * Initialize all the field's of a grid with random solar systems and mother ships of alien races.
+     * @param galaxy Galaxy to initialize.
+     * @param config Config of the current context.
+     */
     private static void initGrid(Galaxy galaxy, ApplicationProperties config) {
         // init grid
         for (int i = 0; i < galaxy.getSizeY(); i++) {

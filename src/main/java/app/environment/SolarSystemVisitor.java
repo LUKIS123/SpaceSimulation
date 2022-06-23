@@ -5,6 +5,9 @@ import app.attack.AlienAttacker;
 import app.config.ApplicationProperties;
 import app.utility.AlienRaceTrader;
 
+/**
+ * Class for visiting a solar system by a mother ship. Visiting basically means interacting with the solar system.
+ */
 public class SolarSystemVisitor {
 
     private MotherShipMover motherShipMover = new MotherShipMover();
@@ -12,11 +15,20 @@ public class SolarSystemVisitor {
     private AlienAttacker alienAttacker;
     private ApplicationProperties config;
 
+    /**
+     * @param attacker Chosen attacking algorithm.
+     * @param config Config of the current context.
+     */
     public SolarSystemVisitor(AlienAttacker attacker, ApplicationProperties config) {
         this.alienAttacker = attacker;
         this.config = config;
     }
 
+    /**
+     * Take the extracted resources from the planet to the ship for later trading.
+     * @param solarSystem Visited solar system.
+     * @param motherShip Visiting mother ship.
+     */
     private void extractResources(SolarSystem solarSystem, MotherShip motherShip) {
         int extracted = solarSystem.getResourcesExtracted();
         System.out.println("\t\tShip landed on its own planet and extracted " + extracted + " resources");
@@ -24,6 +36,11 @@ public class SolarSystemVisitor {
         solarSystem.setResourcesExtracted(0);
     }
 
+    /**
+     * Colonize an empty solar system if possible (if enough money).
+     * @param solarSystem Visited solar system.
+     * @param motherShip Visiting mother ship.
+     */
     private void colonizeSolarSystem(SolarSystem solarSystem, MotherShip motherShip) {
         AlienRace alienRace = motherShip.getOwner();
         System.out.println("\t\tShip landed on empty planet");
@@ -34,6 +51,13 @@ public class SolarSystemVisitor {
         }
     }
 
+    /**
+     * Visit solar system that is already occupied by other race then decide if they should trade with each other
+     * or go to war.
+     * @param galaxy The galaxy in which the visiting is happening.
+     * @param solarSystem Visited solar system.
+     * @param motherShip visiting mother ship.
+     */
     private void visitOtherRace(Galaxy galaxy, SolarSystem solarSystem, MotherShip motherShip) {
         String name1 = motherShip.getOwner().getName();
         String name2 = solarSystem.getOwner().getName();
@@ -54,6 +78,13 @@ public class SolarSystemVisitor {
         }
     }
 
+    /**
+     * Visit given solar system by the given mother ship. Depending on various things the method decides what 'visiting'
+     * actually means. If the solar system will be colonized etc.
+     * @param galaxy The galaxy in which the visiting is happening.
+     * @param solarSystem Visited solar system.
+     * @param motherShip visiting mother ship.
+     */
     public void visit(Galaxy galaxy, SolarSystem solarSystem, MotherShip motherShip) {
         // if empty square don't do anything
         if (solarSystem == null) {

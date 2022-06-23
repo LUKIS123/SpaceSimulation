@@ -6,7 +6,14 @@ import app.attack.algo.NeighbourAlienRaceAttackingAlgo;
 import app.attack.algo.RandomAlienRaceAttackingAlgo;
 import app.config.ApplicationProperties;
 
+/**
+ * A factory for creating the AlienAttacker class instances.
+ */
 public class AlienAttackerFactory {
+    /**
+     * @param config Config that determines the algorithm used.
+     * @return created instance.
+     */
     public static AlienAttacker create(ApplicationProperties config) {
         AlienRaceAttackingAlgo alienRaceAttackingAlgo;
         switch (config.getAlienRaceAttackingAlgo()) {

@@ -3,6 +3,10 @@ package app.environment;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * A class that represents a field in the galaxy's grid. It can have a solar system or mother ships that are currently
+ * in the field.
+ */
 public class GalaxyField {
     private SolarSystem solarSystem;
     // List of mother ships currently in the galaxy field

@@ -4,6 +4,9 @@ import app.alien.AlienRace;
 
 import java.util.List;
 
+/**
+ * A class that represents a mother ship in the simulation.
+ */
 public class MotherShip {
     private int positionX;
     private int positionY;
@@ -54,6 +57,11 @@ public class MotherShip {
         this.resources += delta;
     }
 
+    /**
+     * Destroy and respawn the mother ship by zeroing its resources and setting its coordinates to a random solar system
+     * that is occupied by its own race.
+     * @param galaxy Galaxy in which it's happening.
+     */
     public void destroyAndRespawn(Galaxy galaxy) {
         this.resources = 0;
 

@@ -5,6 +5,9 @@ import app.environment.Galaxy;
 import app.environment.MotherShip;
 import app.environment.SolarSystem;
 
+/**
+ * Check who should win the war by checking who has its own other solar system closer to the attacked solar system.
+ */
 public class NeighbourAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
     @Override
     public boolean attack(Galaxy galaxy, MotherShip attackingShip, SolarSystem attackedSolarSystem) {
@@ -36,6 +39,14 @@ public class NeighbourAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
         return false;
     }
 
+    /**
+     * Check if a solar system found by scanLine is correct. Correct meaning it's owned by either the attacking side or
+     * defending side.
+     * @param solarSystem Solar system found by scanLine.
+     * @param attackingShip Mother ship that is attacking the solar system.
+     * @param attackedSolarSystem Solar system that is on the defending side.
+     * @return
+     */
     private boolean checkSolarSystem(MotherShip attackingShip, SolarSystem attackedSolarSystem, SolarSystem solarSystem) {
         if (solarSystem == null)
             return false;
@@ -44,6 +55,15 @@ public class NeighbourAlienRaceAttackingAlgo implements AlienRaceAttackingAlgo {
         return false;
     }
 
+    /**
+     * Check if there's a solar system in the given line in the galaxy grid.
+     * @param galaxy Galaxy to search for.
+     * @param x1 X of first point of the searched line.
+     * @param y1 Y of first point of the searched line.
+     * @param x2 X of second point of the searched line.
+     * @param y2 Y of second point of the searched line.
+     * @return Found solar system.
+     */
     private SolarSystem scanLine(Galaxy galaxy, int x1, int y1, int x2, int y2) {
         int xStep = 0;
         int yStep = 0;
